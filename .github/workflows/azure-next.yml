@@ -23,7 +23,7 @@ jobs:
         run: npm cache clean --force
 
       - name: Install dependencies
-        run: npm install --force
+        run: npm ci --legacy-peer-deps
 
       - name: Build Next.js app
         run: npm run build
@@ -31,7 +31,7 @@ jobs:
       - name: Prepare deployment package
         run: |
           mkdir deploy
-          cp -r .next package.json next.config.js public deploy/
+          cp -r .next node_modules package.json next.config.js public deploy/
           cd deploy && zip -r ../deploy.zip .
 
       - name: Deploy to Azure Web App
