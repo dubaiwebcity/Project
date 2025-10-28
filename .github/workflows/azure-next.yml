@@ -1,4 +1,4 @@
-name: Azure Next.js Deploy
+name: Deploy Next.js app to Azure
 
 on:
   push:
@@ -10,24 +10,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
 
-    - name: Install dependencies
-      run: npm install --legacy-peer-deps
+      - name: Clean npm cache
+        run: npm cache clean --force
 
-    - name: Build Next.js app
-      run: npm run build
+      - name: Install dependencies
+        run: npm install --force
 
-    - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: 'bnoon'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-        package: '.'   # deploy folder or root
+      - name: Build Next.js app
+        run: npm run build
+
+      - name: Prepare deployment package
+        run: |
+          mkdir deploy
+          cp -r .next package.json next.config.js public deploy/
+          cd deploy && zip -r ../deploy.zip .
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'bnoon'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          package: deploy.zip
