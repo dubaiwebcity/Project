@@ -22,13 +22,11 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Build Next.js standalone app
+      - name: Build Next.js app
         run: |
           npm run build
           mkdir -p deploy
-          cp -r .next/standalone/* deploy/
-          cp -r .next/static deploy/.next/
-          cp -r public deploy/public
+          cp -r .next node_modules package.json next.config.js public deploy/
 
       - name: Zip deployment package
         run: cd deploy && zip -r ../deploy.zip .
