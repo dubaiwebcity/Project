@@ -19,14 +19,19 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+      - name: Clean and install dependencies
+        run: |
+          npm cache clean --force
+          npm ci --legacy-peer-deps
 
       - name: Build Next.js app
         run: |
           npm run build
           mkdir -p deploy
           cp -r .next node_modules package.json next.config.js public deploy/
+
+      - name: Fix permissions for Next.js binary
+        run: chmod +x deploy/node_modules/.bin/next
 
       - name: Zip deployment package
         run: cd deploy && zip -r ../deploy.zip .
