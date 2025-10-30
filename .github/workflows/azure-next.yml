@@ -19,7 +19,7 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Clean install dependencies
         run: npm ci --legacy-peer-deps
 
       - name: Build Next.js app (standalone)
@@ -29,8 +29,9 @@ jobs:
           cp -r .next/standalone/* deploy/
           cp -r .next/static deploy/.next/
           cp -r public deploy/public
-          cp server.js deploy/
           cp package.json deploy/
+          cp next.config.js deploy/ || true
+          cp -r node_modules deploy/node_modules  # ✅ include all node_modules to avoid missing bundle5.js
 
       - name: Zip deployment package
         run: cd deploy && zip -r ../deploy.zip .
