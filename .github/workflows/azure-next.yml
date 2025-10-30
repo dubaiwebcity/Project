@@ -31,6 +31,7 @@ jobs:
           cp package.json deploy/
           cp server.js deploy/
           cp next.config.js deploy/ || true
+          cp web.config deploy/
 
       - name: Zip deployment package
         run: cd deploy && zip -r ../deploy.zip .
