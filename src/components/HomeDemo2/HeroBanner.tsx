@@ -9,7 +9,6 @@ function HeroBanner() {
 
   // ✅ Slides (video + text + buttonLink)
   const slides = [
-
     {
       video: "images/banner/banner-2.mp4",
       title: "WA'AD BNOON PROGRAM",
