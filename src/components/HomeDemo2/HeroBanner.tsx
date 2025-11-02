@@ -9,15 +9,7 @@ function HeroBanner() {
 
   // ✅ Slides (video + text + buttonLink)
   const slides = [
-   {
-    video: "images/banner/banner-1.mp4",
-    title: "YOUR DREAM IS CLOSER ON KSA NATIONAL DAY",
-    desc: "Benefit from our National Day Special Offer",
-    extra: "*Terms & Conditions Apply",
-    extraFontSize: "14px",
-    buttonLink: "en/national-day-offer",
-    buttonText: "Read More", // 👈 only first banner
-  },
+
     {
       video: "images/banner/banner-2.mp4",
       title: "WA'AD BNOON PROGRAM",
