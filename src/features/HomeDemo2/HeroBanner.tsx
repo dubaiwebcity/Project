@@ -9,15 +9,7 @@ function HeroBanner() {
 
   // ✅ Slides (video + text + buttonLink)
   const slides = [
-   {
-    video: "images/ar-banner/1.mp4",
-    title: "في يوم الوطن،<br /> حلمكم ما هو بعيد",
-    desc: "استفيدوا من العرض الخاص باليوم الوطني في بنون",
-    extra: "طبق الشروط والأحكام",
-    extraFontSize: "14px",
-    buttonLink: "ar/national-day-offer",
-    buttonText: "المزيد", // 👈 only first banner
-  },
+
     {
       video: "images/ar-banner/2.mp4",
       title: "برنامج وعد بنون",
@@ -172,11 +164,20 @@ function HeroBanner() {
             }}
             style={{
               color: slides[currentSlide].descColor || "#fff",
-              fontSize: slides[currentSlide].extraFontSize || "inherit",
+              // ❌ remove this line
+    // fontSize: slides[currentSlide].extraFontSize || "inherit",
             }}
           />
         </div>
       </div>
+<style jsx>{`
+  /* ✅ Mobile only: override the inline height */
+  @media (max-width: 768px) {
+    .second-banner-area {
+      height: 200px !important; /* 👈 removes the fixed height */
+    }
+  }
+`}</style>
 
       {/* 🔹 Slider Dots */}
       <div
