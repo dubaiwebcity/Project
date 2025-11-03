@@ -162,7 +162,8 @@ function HeroBanner() {
             }}
             style={{
               color: slides[currentSlide].descColor || "#fff",
-              fontSize: slides[currentSlide].extraFontSize || "inherit",
+ // ❌ remove this line
+    // fontSize: slides[currentSlide].extraFontSize || "inherit",
             }}
           />
         </div>
