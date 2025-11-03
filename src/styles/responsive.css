@@ -1,8 +1,8 @@
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
   .ptb-140 {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .pt-140 {
     padding-top: 50px;
