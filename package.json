@@ -11,6 +11,7 @@
     "@fontsource/alexandria": "^5.2.8",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
     "mongodb": "^6.20.0",
     "mongoose": "^8.19.1",
     "next": "^14.2.33",
