@@ -14,7 +14,7 @@
     margin-bottom: 5px;
   }
   .section-title .left h2 {
-    font-size: 25px;
+    font-size: 20px;
   }
   .section-title .right.wrap2 {
     text-align: start;
@@ -132,7 +132,7 @@
     padding: 20px;
   }
   .service-card .top h3 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 15px;
   }
   .service-card .bottom {
@@ -164,10 +164,10 @@
     padding: 25px;
   }
   .doctor-card .content h3 {
-    font-size: 20px;
+    font-size: 16px;
   }
   .doctor-card .content .doctor-btn {
-    margin-top: 25px;
+    margin-top: 5px;
   }
   .work-image {
     padding-right: 0;
@@ -278,8 +278,13 @@
     margin-top: 25px;
   }
   .blog-card .content h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
+
+  .blog-text {
+    margin: 0 0 15px;
+    font-size: 14px;
+}
   .overview-area {
     margin: 0 0;
   }
@@ -393,7 +398,7 @@
     margin-bottom: 0;
   }
   .second-about-content h2 {
-    font-size: 25px;
+    font-size: 20px;
   }
   .second-about-items {
     max-width: 100%;
@@ -721,7 +726,7 @@
     padding-left: 0;
   }
   .service-overview-content h2 {
-    font-size: 25px;
+    font-size: 20px;
   }
   .service-covers-content h2 {
     font-size: 25px;
