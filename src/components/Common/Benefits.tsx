@@ -122,7 +122,7 @@ const Benefits = () => {
             }}
           >
         <div
-  className="service-overview-image"
+  className="service-overview-image mb-md-0 mb-5"
   style={{
     boxShadow: "50px 50px 0px #d7f2fb",
     overflow: "hidden",
