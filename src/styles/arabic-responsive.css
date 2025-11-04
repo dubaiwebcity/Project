@@ -1,3 +1,11 @@
+@media (max-width: 768px) {
+    .popup-heading {
+        font-size: 14px !important;
+        width: 90%;
+        color: #fff;
+        padding: 40px 0px 0px;
+    }
+}
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
   .ptb-140 {
@@ -77,6 +85,35 @@
   .main-banner-image {
     margin-left: 0;
   }
+  button.btn.btn-primary.px-5.py-2.rounded-lg.submit-btn {
+    width: 100%;
+}
+  .form-input {
+    width: 100%;
+}
+
+  .copyright-area .lists li {
+    list-style-type: none;
+    font-size: 12px;
+    position: relative;
+    margin-right: 40px;
+    margin: -18px 0px 0px;
+}
+  .faq-accordion .accordion .accordion-item .accordion-button {
+    border: none;
+    box-shadow: unset;
+    position: relative;
+    background-color: transparent;
+    color: #2a3547;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px 5px 0 0;
+    transition: .7s;
+}
+  .faq-accordion .accordion .accordion-item .accordion-body {
+    padding: 1px 20px;
+    font-size: 12px;
+}
   .main-banner-image .fun-items {
     display: block;
     padding: 30px;
@@ -445,7 +482,7 @@ p.terms-text {
     max-width: 100%;
   }
   .second-about-items .item {
-    padding: 25px;
+    padding: 5px;
   }
   .second-about-items .item h3 {
     font-size: 22px;
