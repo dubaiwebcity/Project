@@ -4,25 +4,23 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const AppointmentSection = () => {
-const [formData, setFormData] = useState<FormFields>({
-  interest: "",
-  branch: "",
-  doctor: "",
-  name: "",
-  isForYou: "",
-  nationality: "",
-  countryOfResidence: "",
-  cityIfInSA: "",
-  gender: "",
-  mobile: "",
-  email: "",
-  preferredDate: "",
-  preferredTime: "",
-  howHeard: "",
-});
-type FormFields = {
-  [key: string]: string;
-};
+  const [formData, setFormData] = useState({
+    interest: "",
+    branch: "",
+    doctor: "",
+    name: "",
+    isForYou: "",
+    nationality: "",
+    countryOfResidence: "",
+    cityIfInSA: "",
+    gender: "",
+    mobile: "",
+    email: "",
+    preferredDate: "",
+    preferredTime: "",
+    howHeard: "",
+  });
+
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +57,7 @@ type FormFields = {
   };
 
   // ✅ Form Submit
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
   e.preventDefault();
   setSubmitted(true);
@@ -69,7 +67,9 @@ type FormFields = {
     (key) => key !== "cityIfInSA" || formData.countryOfResidence === "Saudi Arabia"
   );
 
-  const hasEmpty = requiredFields.some((key) => !formData[key]);
+  const hasEmpty = requiredFields.some(
+  (key) => !(formData as Record<string, string>)[key]
+);
   if (hasEmpty) {
     setMessage("❌ Please fill all required fields.");
     return;
