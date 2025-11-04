@@ -126,6 +126,19 @@
   .service-card .top {
     padding: 20px;
   }
+  .lang-box {
+    display: inline-block;
+    margin: 0 20px;
+    background: #f1f1f100;
+    color: #000;
+    padding: 4px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #ccc;
+}
+  ol.breadcrumb {
+    font-size: 12px;
+}
   .service-card .top h3 {
     font-size: 16px;
     margin-bottom: 15px;
