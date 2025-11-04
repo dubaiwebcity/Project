@@ -16494,6 +16494,28 @@ Service Overview Area CSS
   margin-bottom: 17px;
   color: #004E78;
 }
+/* ✅ Mobile view (max-width 768px) */
+@media (max-width: 768px) {
+  .search-overview-content h2,
+  .search-overview-content .h2 {
+    font-size: 20px;
+  }
+  h2.popup-heading {
+    font-size: 18px !important;
+}
+  .form-input {
+    width: 100%;
+}
+  button.btn.btn-primary.px-5.py-2.rounded-lg.submit-btn {
+    width: 100%;
+}
+  .doctor-content {
+    padding-right: 0px;
+}
+  ol.breadcrumb {
+    font-size: 15px;
+}
+}
 .service-overview-content h2, .service-overview-content .h2 {
   font-size: 40px;
   margin-bottom: 17px;
@@ -19140,6 +19162,7 @@ font-size: 14px;
 }
 h2.popup-heading {
     font-size: 22px !important;
+  color: #fff;
 }
 p.popup-text {
     font-size: 14px !important;
