@@ -12,6 +12,7 @@
   }
   .section-title {
     margin-bottom: 5px;
+  
   }
   .section-title .left h2 {
     font-size: 20px;
@@ -404,11 +405,30 @@
     max-width: 100%;
   }
   .second-about-items .item {
-    padding: 25px;
+    padding: 5px;
   }
   .second-about-items .item h3 {
     font-size: 22px;
   }
+
+  .faq-accordion .accordion .accordion-item {
+    border: 0;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+  .faq-accordion .accordion .accordion-item .accordion-button {
+    border: none;
+    box-shadow: unset;
+    position: relative;
+    padding: 15px 57px 15px 20px;
+    background-color: transparent;
+    color: #2a3547;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px 5px 0 0;
+    transition: .7s;
+}
   .second-about-btn {
     margin-top: 25px;
   }
