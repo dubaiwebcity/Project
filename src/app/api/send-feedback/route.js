@@ -16,8 +16,8 @@ export async function POST(req) {
     // 3️⃣ Send email
     const recipient =
       data.branch === "Riyadh"
-        ? "zulaikhakhalid18@gmail.com"
-        : "zulaikhakhalid541@gmail.com";
+        ? "feedback@bnoon.sa"
+        : "feedback@bnoon.sa";
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
