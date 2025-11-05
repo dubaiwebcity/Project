@@ -10,8 +10,8 @@ export async function POST(req) {
     const saved = await AppointmentAR.create(data);
 
     let recipient = "";
-    if (data.branch === "Riyadh" || data.branch === "الرياض") recipient = "websitedesignbahrain@gmail.com";
-    else if (data.branch === "Jeddah" || data.branch === "جدة") recipient = "zulaikhakhalid541@gmail.com";
+    if (data.branch === "Riyadh" || data.branch === "الرياض") recipient = "appointments@bnoon.sa";
+    else if (data.branch === "Jeddah" || data.branch === "جدة") recipient = "appointments.jeddah@bnoon.sa";
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -19,10 +19,10 @@ export async function POST(req) {
     });
 
     await transporter.sendMail({
-      from: `"موقع بــنون" <bnooninfo@gmail.com>`,
+      from: `"طلب موعد" <bnooninfo@gmail.com>`,
       to: recipient,
-      subject: `طلب موعد جديد - ${data.branch}`,
-      html: `<h3>تم إرسال طلب موعد جديد</h3>
+      subject: `طلب جديد لحجز موعد - ويبسايت ${data.branch}`,
+      html: `<h3>تفاصيل الموعد</h3>
              <p><b>الاهتمام:</b> ${data.interest}</p>
              <p><b>الفرع:</b> ${data.branch}</p>
              <p><b>الطبيب:</b> ${data.doctor}</p>
