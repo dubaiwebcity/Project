@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { Placeholder } from "react-bootstrap";
 
 const AppointmentSection = () => {
-const [formData, setFormData] = useState<FormFields>({
+const [formData, setFormData] = useState({
   interest: "",
   branch: "",
   doctor: "",
@@ -19,9 +20,6 @@ const [formData, setFormData] = useState<FormFields>({
   preferredTime: "",
   howHeard: "",
 });
-type FormFields = {
-  [key: string]: string;
-};
 const nationalities = [
   "سعودي",
   "أفغاني",
@@ -445,14 +443,15 @@ const [message, setMessage] = useState("");
   const isFieldInvalid = (field: string) =>
     submitted && !formData[field as keyof typeof formData];
 
- const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   setSubmitted(true);
 
   // check empty fields
   const requiredFields = ["branch", "name", "mobile", "email"];
-const hasEmpty = requiredFields.some((field) => !formData[field]);
+const hasEmpty = requiredFields.some(
+  (field) => !formData[field as keyof typeof formData]
+);
 
   if (hasEmpty) {
     setMessage("❌ Please fill all required fields.");
