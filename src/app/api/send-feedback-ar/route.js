@@ -38,8 +38,8 @@ export async function POST(req) {
     // Choose email recipient
     const recipient =
       branch === "الرياض"
-        ? "zulaikhakhalid18@gmail.com"
-        : "zulaikhakhalid541@gmail.com";
+        ? "feedback@bnoon.sa"
+        : "feedback@bnoon.sa";
 
     // Setup Nodemailer
     const transporter = nodemailer.createTransport({
