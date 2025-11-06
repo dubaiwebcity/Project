@@ -9,12 +9,30 @@ const Popup = () => {
 
   const pathname = usePathname();
 
-  const handleContact = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Submitted Email:", email);
-    setMessage("Thank you for subscribing!");
-    setEmail("");
-  };
+  const handleContact = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setMessage("✅ Thank you for subscribing!");
+      setEmail("");
+    } else {
+      setMessage("❌ " + (data.error || "Something went wrong"));
+    }
+  } catch (err) {
+    console.error(err);
+    setMessage("⚠️ Server error. Please try again later.");
+  }
+};
+
 
   useEffect(() => {
     if (typeof window !== "undefined") {
