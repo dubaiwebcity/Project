@@ -6,12 +6,30 @@ const HowItWorks = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleContact = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Submitted Email:", email);
-    setMessage("Thank you for subscribing!");
-    setEmail("");
-  };
+const handleContact = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/subscribe-ar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setMessage("✅ تم الاشتراك بنجاح! شكراً لكم.");
+      setEmail("");
+    } else {
+      setMessage("❌ " + (data.error || "حدث خطأ، حاول مرة أخرى."));
+    }
+  } catch (err) {
+    console.error(err);
+    setMessage("⚠️ خطأ في الخادم. الرجاء المحاولة لاحقاً.");
+  }
+};
+
 
   return (
     <div className="stay-area ptb-140">
