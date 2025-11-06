@@ -9251,7 +9251,7 @@ nav#navbar {
 
 .text-success {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+  color: rgb(0 0 0) !important;
 }
 
 .text-info {
