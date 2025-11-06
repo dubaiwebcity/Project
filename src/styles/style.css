@@ -19208,3 +19208,25 @@ ease;
   font-size: 18px;
   border-radius: 10px;
 }
+@font-face {
+  font-family: "Rowdies";
+  src: url("/fonts/Rowdies-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oregano";
+  src: url("/fonts/Oregano-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Custom classes for specific parts */
+.rowdies-font {
+  font-family: "Rowdies", sans-serif;
+}
+
+.oregano-font {
+  font-family: "Oregano", cursive;
+}
