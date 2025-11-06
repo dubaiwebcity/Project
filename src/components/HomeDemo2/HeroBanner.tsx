@@ -9,16 +9,16 @@ function HeroBanner() {
 
   // ✅ Slides (video + text + buttonLink)
   const slides = [
-    {
-      video: "images/banner/banner-2.mp4",
-      title: "WA'AD BNOON PROGRAM",
-      desc: "Get Pregnant or Your Money Back:<br>Peace of Mind. Less Stress",
-      titleColor: "#004E78",
-      descColor: "#004E78",
-      extra: "*Terms & Conditions Apply",
-      buttonLink: "en/waad-bnoon-program", // 👈 custom link
-      buttonText: "Book Now",
-    },
+     {
+    video: "images/banner/banner-2.mp4",
+    title: "<span class='rowdies-font'>WA'AD BNOON</span> <span class='oregano-font'>PROGRAM</span>",
+    desc: "<strong>Get Pregnant or Your Money Back:</strong><br><em>Peace of Mind. Less Stress</em>",
+    titleColor: "#004E78",
+    descColor: "#004E78",
+    extra: "*Terms & Conditions Apply",
+    buttonLink: "en/waad-bnoon-program",
+    buttonText: "Book Now",
+  },
     {
       video: "images/banner/banner-3.mp4",
       title: "THE FUTURE OF<br>FERTILITY IS HERE",
