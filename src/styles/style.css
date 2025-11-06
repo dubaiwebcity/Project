@@ -15588,7 +15588,7 @@ Second Banner Area CSS
   font-weight:600;
 }
 .second-banner-content p {
-  font-size: 22px !important;
+  font-size: 35px !important;
   margin-bottom: 0;
   color: #ffffff;
 }
@@ -19226,9 +19226,24 @@ ease;
 }
 
 .rowdies-font {
-  font-family: 'Rowdies', sans-serif;
+    font-family: Rowdies !important;
+    font-size: 55px;
 }
 
 .oregano-font {
-  font-family: 'Oregano', cursive;
+    font-family: Oregano !important;
+    font-size:48px;
+    color:#808080;
+    
+}
+
+/* 🔹 Mobile screens (768px tak) */
+@media (max-width: 768px) {
+  .rowdies-font {
+    font-size: 15px;
+  }
+
+  .oregano-font {
+    font-size: 15px;
+  }
 }
