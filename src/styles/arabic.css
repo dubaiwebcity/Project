@@ -19190,3 +19190,33 @@ ease;
   font-size: 18px;
   border-radius: 10px;
 }
+@font-face {
+  font-family: 'Hor';
+  src: url('/fonts/Hor Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'XBTitre';
+  src: url('/fonts/XB Titre.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* custom classes */
+.font-program {
+  font-family: Hor !important;
+  color: #808080;
+  font-size: 60px;
+}
+
+.font-xbtitre {
+  font-family: XBTitre !important;
+  color: #004E78;
+  font-size: 60px;
+}
+@media (max-width: 768px) {
+  .font-program { font-size: 15px; }
+  .font-xbtitre  { font-size: 15px; }
+}
