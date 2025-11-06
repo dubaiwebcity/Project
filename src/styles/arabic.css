@@ -19206,17 +19206,24 @@ ease;
 
 /* custom classes */
 .font-program {
-  font-family: Hor !important;
+  font-family: 'Hor' !important;
   color: #808080;
   font-size: 60px;
 }
 
 .font-xbtitre {
-  font-family: XBTitre !important;
+  font-family: 'XBTitre' !important;
   color: #004E78;
   font-size: 60px;
 }
+
+/* ✅ Mobile responsive */
 @media (max-width: 768px) {
-  .font-program { font-size: 15px; }
-  .font-xbtitre  { font-size: 15px; }
+  .font-program {
+    font-size: 15px;
+  }
+
+  .font-xbtitre {
+    font-size: 15px;
+  }
 }
