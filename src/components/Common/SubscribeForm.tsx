@@ -1,15 +1,35 @@
-import React from "react";
-import { redirect } from "next/navigation";
+"use client";
 
-async function handleSubscribe(formData: FormData) {
-  "use client";
-  const email = String(formData.get("email") || "").trim();
-  // TODO: Wire up to email marketing service
-  console.log("[Subscribe]", { email });
-  redirect("/thank-you");
-}
+import React, { useState } from "react";
 
 const SubscribeForm = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setMessage("✅ Thank you for subscribing!");
+        setEmail("");
+      } else {
+        setMessage("❌ " + (data.error || "Something went wrong"));
+      }
+    } catch (err) {
+      console.error(err);
+      setMessage("⚠️ Server error. Please try again later.");
+    }
+  };
+
   return (
     <>
       <div className="subscribe-area ptb-140">
@@ -23,12 +43,15 @@ const SubscribeForm = () => {
             </p>
           </div>
 
-          <form className="subscribe-form" action={handleSubscribe}>
+          <form className="subscribe-form" onSubmit={handleSubscribe}>
             <input
-              type="text"
+              type="email"
               name="email"
               className="form-control"
               placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
 
             <button type="submit" className="default-btn">
@@ -63,6 +86,8 @@ const SubscribeForm = () => {
               </span>
             </button>
           </form>
+
+          {message && <p className="text-success mt-3">{message}</p>}
 
           <ul className="subscribe-list">
             <li>
