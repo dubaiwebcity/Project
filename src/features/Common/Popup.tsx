@@ -9,11 +9,29 @@ const PopupAr = () => {
 
   const pathname = usePathname();
 
-  const handleContact = (e: React.FormEvent<HTMLFormElement>) => {
+  // ✅ Updated async function
+  const handleContact = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("تم إدخال البريد الإلكتروني:", email);
-    setMessage("شكرًا لاشتراكك!");
-    setEmail("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setMessage("✅ شكرًا لاشتراكك!");
+        setEmail("");
+      } else {
+        setMessage("❌ " + (data.error || "حدث خطأ ما"));
+      }
+    } catch (err) {
+      console.error("خطأ في الخادم:", err);
+      setMessage("⚠️ حدث خطأ في الخادم. حاول مرة أخرى لاحقًا.");
+    }
   };
 
   useEffect(() => {
@@ -84,7 +102,7 @@ const PopupAr = () => {
                 style={{
                   position: "absolute",
                   top: "-20px",
-                  left: "-20px", // flipped for RTL
+                  left: "-20px",
                   border: "none",
                   background: "transparent",
                   color: "#fff",
@@ -100,18 +118,18 @@ const PopupAr = () => {
               </button>
 
               <h2 className="popup-heading">
-               انطلاقة متجددة لبنون: هوية جديدة وموقع إلكتروني
-يواكب الجيل الجديد من علاجات الإخصاب وصحة المرأة
+                انطلاقة متجددة لبنون: هوية جديدة وموقع إلكتروني يواكب الجيل الجديد
+                من علاجات الإخصاب وصحة المرأة
               </h2>
               <p className="popup-text">
-               أطلقنــــا هويتنا الجــــديدة وطــــوّرنا موقعنا الإلــــكتروني
-
-لـــــنـــمنحــــكم تجـــــربـــــة أسرع وأســـــهــــل۔
+                أطلقنــــا هويتنا الجــــديدة وطــــوّرنا موقعنا الإلــــكتروني
+                لـــــنـــمنحــــكم تجـــــربـــــة أسرع وأســـــهــــل۔
               </p>
               <p className="popup-text mb-2">
                 <strong>هل ترغبون في معرفة كل جديد لدينا؟</strong>
               </p>
 
+              {/* ✅ connected form */}
               <form onSubmit={handleContact} className="w-full">
                 <div className="flex w-full items-center max-w-xl">
                   <input
@@ -135,9 +153,8 @@ const PopupAr = () => {
               </form>
 
               <p className="popup-text">
-               من خلال إدخال بريدكم الإلكتروني، فإنكم توافقون على
-
-سياسة الخصوصية الخاصة بنا. يمكنكم إلغاء الاشتراك في أي وقت۔
+                من خلال إدخال بريدكم الإلكتروني، فإنكم توافقون على سياسة الخصوصية
+                الخاصة بنا. يمكنكم إلغاء الاشتراك في أي وقت۔
               </p>
             </div>
           </div>
