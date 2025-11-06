@@ -1,4 +1,18 @@
 /* Max width 767px */
+/* 📱 Responsive adjustments */
+@media (max-width: 991px) {
+  .service-overview-image {
+    box-shadow: -20px 20px 0px #d7f2fb; /* smaller shadow for mobile */
+    display: block;
+    width: 100%;
+  }
+
+  .service-overview-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}
 @media only screen and (max-width: 767px) {
   .ptb-140 {
     padding-top: 20px;
