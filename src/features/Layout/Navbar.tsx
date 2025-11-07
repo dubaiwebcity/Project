@@ -170,20 +170,25 @@ function Navbar() {
 
             {/* Navigation Menu */}
             <div className="collapse navbar-collapse justify-content-start">
-              <ul className="navbar-nav">
-                {menus.map((item) => (
-                  <li key={item.id} className="nav-item">
-                    <Link
-                      href={item.href || "#"}
-                      className={`nav-link ${
-                        isActive(item.href || "") ? "active" : ""
-                      }`}
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+             <ul className="navbar-nav">
+  {menus.map((item) => (
+    <li key={item.id} className="nav-item">
+      <Link
+        href={
+          item.id === "english"
+            ? pathname.replace(/^\/ar/, "/en") // agar Arabic me hai → English page open karo
+            : item.href || "#"
+        }
+        className={`nav-link ${
+          isActive(item.href || "") ? "active" : ""
+        }`}
+      >
+        {item.title}
+      </Link>
+    </li>
+  ))}
+</ul>
+
             </div>
           </div>
         </div>
