@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const PDFViewer = dynamic(() => import("./PDFViewer"), {
   ssr: false,
   loading: () => <p style={{ textAlign: "center" }}>Loading PDF...</p>,
- });
+});
 
 const PatientsRightsPage: React.FC = () => {
   return (
@@ -26,8 +26,7 @@ const PatientsRightsPage: React.FC = () => {
           padding: "20px",
         }}
       >
-       {/* <PDFViewer /> */}
-
+        <PDFViewer />
       </div>
     </div>
   );
