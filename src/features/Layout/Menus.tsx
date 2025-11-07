@@ -42,6 +42,6 @@ export const menus = [
    {
     id: "english",
     title: "English",
-    href: "#",
+    href: "switch-to-english",
   },
 ];
