@@ -39,4 +39,9 @@ export const menus = [
     title: "اتصل بنا",
     href: "/ar/contact-us",
   },
+   {
+    id: "english",
+    title: "English",
+    href: "#",
+  },
 ];
