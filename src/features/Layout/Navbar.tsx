@@ -170,24 +170,21 @@ function Navbar() {
 
             {/* Navigation Menu */}
             <div className="collapse navbar-collapse justify-content-start">
-             <ul className="navbar-nav">
-  {menus.map((item) => (
-    <li key={item.id} className="nav-item">
-      <Link
-        href={
-          item.id === "english"
-            ? pathname.replace(/^\/ar/, "/en") // agar Arabic me hai → English page open karo
-            : item.href || "#"
-        }
-        className={`nav-link ${
-          isActive(item.href || "") ? "active" : ""
-        }`}
-      >
-        {item.title}
-      </Link>
-    </li>
-  ))}
+           <ul className="navbar-nav">
+  {menus
+    .filter((item) => item.id !== "english") // 👈 desktop se English hide
+    .map((item) => (
+      <li key={item.id} className="nav-item">
+        <Link
+          href={item.href || "#"}
+          className={`nav-link ${isActive(item.href || "") ? "active" : ""}`}
+        >
+          {item.title}
+        </Link>
+      </li>
+    ))}
 </ul>
+
 
             </div>
           </div>
@@ -213,33 +210,39 @@ function Navbar() {
         </Offcanvas.Header>
 
         <Offcanvas.Body className="d-flex flex-column justify-content-center align-items-center text-center">
-          <ul className="list-unstyled w-100 px-3">
-            {menus.map((item, index) => (
-              <li key={item.id} className="my-3">
-                <Link
-                  href={item.href || "#"}
-                  className="fs-5 text-decoration-none d-block"
-                  style={{ color: "#004E78" }}
-                  onClick={() => {
-                    handleClose();
-                    setTimeout(() => {
-                      window.location.href = item.href;
-                    }, 200);
-                  }}
-                >
-                  {item.title}
-                </Link>
-                {index !== menus.length - 1 && (
-                  <hr
-                    style={{
-                      border: "1px solid #00000020",
-                      margin: "12px 0",
-                    }}
-                  />
-                )}
-              </li>
-            ))}
-          </ul>
+        <ul className="list-unstyled w-100 px-3">
+  {menus.map((item, index) => (
+    <li key={item.id} className="my-3">
+      <Link
+        href={
+          item.id === "english"
+            ? pathname.replace(/^\/ar/, "/en") // 👈 agar English ho to page switch kare
+            : item.href || "#"
+        }
+        className="fs-5 text-decoration-none d-block"
+        style={{ color: "#004E78" }}
+        onClick={() => {
+          handleClose();
+          if (item.id === "english") return; // 👈 page auto handle karega
+          setTimeout(() => {
+            window.location.href = item.href;
+          }, 200);
+        }}
+      >
+        {item.title}
+      </Link>
+      {index !== menus.length - 1 && (
+        <hr
+          style={{
+            border: "1px solid #00000020",
+            margin: "12px 0",
+          }}
+        />
+      )}
+    </li>
+  ))}
+</ul>
+
 
           {/* Language Switcher */}
           <div className="mt-4 d-flex flex-column align-items-center">
