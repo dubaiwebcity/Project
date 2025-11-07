@@ -24,7 +24,7 @@ const OurLocations = () => {
                 Bnoon Riyadh consistently delivers outstanding clinical outcomes, with success rates that meet and often exceed international benchmarks.
               </p>
 
-              <div className="d-flex align-items-center mt-3 gap-4">
+              <div className="d-flex align-items-center mt-3 gap-4 flex-column flex-md-row">
                 <div className="d-flex align-items-center">
                   <img src="/images/icons/location.svg" alt="Email" width={24} height={24} className="me-2" />
                   <span>Bnoon - Riyadh </span>
@@ -81,7 +81,7 @@ const OurLocations = () => {
                 Accredited by the Joint Commission International (JCI), the center offers a comprehensive range of services, including IVF, ICSI, egg and sperm freezing, genetic testing, hormonal assessments, and advanced male and female fertility diagnostics. Leveraging the latest in medical technology, including time-lapse embryo monitoring, AI-driven treatment planning, and digital patient tracking, Bnoon Jeddah provides personalized, evidence-based care designed to maximize success rates and patient comfort.   
               </p>
 
-              <div className="d-flex align-items-center mt-3 gap-4">
+              <div className="d-flex align-items-center mt-3 gap-4 flex-column flex-md-row">
                 <div className="d-flex align-items-center">
                   <img src="/images/icons/location.svg" alt="Email" width={24} height={24} className="me-2" />
                   <span>Bnoon – Jeddah  </span>
@@ -117,7 +117,7 @@ const OurLocations = () => {
                 With a focus on clinical excellence, innovation, and patient-centered care, Bnoon – King Salman Road is envisioned to become a regional reference for fertility and reproductive science, supporting the broader ambitions of Saudi Vision 2030 to position the Kingdom as a hub for medical innovation and advanced healthcare delivery.
               </p>
 
-              <div className="d-flex align-items-center mt-3 gap-4">
+              <div className="d-flex align-items-center mt-3 gap-4 flex-column flex-md-row">
                 <div className="d-flex align-items-center">
                   <img src="/images/icons/location.svg" alt="Email" width={24} height={24} className="me-2" />
                   <span>Bnoon – Jeddah  </span>
