@@ -56,7 +56,7 @@ const OurLocations = () => {
         </div>
 
         {/* Jeddah Section */}
-        <div className="row justify-content-center align-items-center g-4 mt-5">
+        <div className="row justify-content-center align-items-center g-4 mt-5 flex-column-reverse flex-md-row">
           <div className="col-xl-6 col-md-12">
             <div
               className="service-overview-image"
