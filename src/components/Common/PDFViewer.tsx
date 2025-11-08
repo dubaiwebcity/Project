@@ -3,11 +3,8 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
-// ✅ Load worker locally instead of CDN (works on Azure)
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.js",
-  import.meta.url
-).toString();
+// Use the CDN version of the worker for Azure deployment
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const PDFViewer: React.FC = () => {
   const [numPages, setNumPages] = useState<number | null>(null);
