@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
+// Use CDN worker (required for Next.js & Azure)
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const PDFViewer: React.FC = () => {
@@ -11,7 +12,7 @@ const PDFViewer: React.FC = () => {
   return (
     <div style={{ width: "100%", textAlign: "center" }}>
       <Document
-        file="/images/pdf/bnoon-patients-rights.pdf"
+        file="https://bnoon-b4ffdpgpbpaehwfa.canadacentral-01.azurewebsites.net/images/pdf/bnoon-patients-rights.pdf"
         onLoadSuccess={({ numPages }) => setNumPages(numPages)}
         onLoadError={(error) => console.error("❌ PDF load error:", error)}
         loading={<p>Loading PDF...</p>}
@@ -20,7 +21,11 @@ const PDFViewer: React.FC = () => {
           Array.from({ length: numPages }, (_, index) => (
             <div
               key={`page_${index + 1}`}
-              style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}
+              style={{
+                marginBottom: "20px",
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
               <Page
                 pageNumber={index + 1}
