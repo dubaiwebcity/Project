@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
-// Use the CDN version of the worker for Azure deployment
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const PDFViewer: React.FC = () => {
