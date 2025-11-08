@@ -17,15 +17,11 @@ const PDFViewer: React.FC = () => {
         onLoadError={(error) => console.error("❌ PDF load error:", error)}
         loading={<p>Loading PDF...</p>}
       >
-        {numPages &&
+        {numPages !== null &&
           Array.from({ length: numPages }, (_, index) => (
             <div
               key={`page_${index + 1}`}
-              style={{
-                marginBottom: "20px",
-                display: "flex",
-                justifyContent: "center",
-              }}
+              style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}
             >
               <Page
                 pageNumber={index + 1}
@@ -41,4 +37,3 @@ const PDFViewer: React.FC = () => {
 };
 
 export default PDFViewer;
-
