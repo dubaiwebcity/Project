@@ -12,7 +12,7 @@ const PDFViewer: React.FC = () => {
   return (
     <div style={{ width: "100%", textAlign: "center" }}>
       <Document
-        file="/images/pdf/bnoon-patients-rights.pdf"
+        file="https://bnoon-b4ffdpgpbpaehwfa.canadacentral-01.azurewebsites.net/images/pdf/bnoon-patients-rights.pdf"
         onLoadSuccess={({ numPages }) => setNumPages(numPages)}
         loading={<p>Loading PDF...</p>}
       >
@@ -39,5 +39,6 @@ const PDFViewer: React.FC = () => {
 };
 
 export default PDFViewer;
+
 
 
