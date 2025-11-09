@@ -11,12 +11,13 @@ const PDFViewer: React.FC = () => {
 
   return (
     <div style={{ width: "100%", textAlign: "center" }}>
-      <Document
-        file="https://bnoon-b4ffdpgpbpaehwfa.canadacentral-01.azurewebsites.net/images/pdf/bnoon-patients-rights.pdf"
-        onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-        onLoadError={(error) => console.error("❌ PDF load error:", error)}
-        loading={<p>Loading PDF...</p>}
-      >
+    <Document
+  file="/images/pdf/bnoon-patients-rights.pdf"
+  onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+  onLoadError={(error) => console.error("❌ PDF load error:", error)}
+  loading={<p>Loading PDF...</p>}
+/>
+
         {numPages !== null &&
           Array.from({ length: numPages }, (_, index) => (
             <div
@@ -41,3 +42,4 @@ const PDFViewer: React.FC = () => {
 };
 
 export default PDFViewer;
+
