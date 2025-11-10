@@ -3,8 +3,7 @@ import ClientPatientsRightsPage from "./page.client";
 
 export const metadata: Metadata = {
   title: "Patients Rights – Bnoon",
-  description:
-    "",
+  description: "",
 };
 
 export default function ServerPatientsRightsPage() {
