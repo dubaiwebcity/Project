@@ -1,30 +1,26 @@
 "use client";
 
-import dynamic from "next/dynamic";
-const PDFViewer = dynamic(() => import("./PDFViewer"), { ssr: false });
+import React from "react";
 
 const PaitentRights: React.FC = () => {
   return (
     <div
       style={{
-        backgroundColor: "#fff",
-        padding: "120px 0",
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        justifyContent: "center", // horizontally center
+        alignItems: "center",    // vertically center (optional)
+        width: "100%",
+        height: "100vh",
+        margin: 0,
+        padding: 0,
       }}
     >
-      <div
-        style={{
-          width: "90%",
-          maxWidth: "900px",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-          borderRadius: "10px",
-          padding: "20px",
-        }}
-      >
-        <PDFViewer />
-      </div>
+      <iframe
+        src="/pdf/bnoon-patients-rights.pdf#toolbar=0&navpanes=0&scrollbar=0"
+        width="50%" // iframe width
+        height="100%" // iframe height
+        style={{ border: "none" }}
+      ></iframe>
     </div>
   );
 };
