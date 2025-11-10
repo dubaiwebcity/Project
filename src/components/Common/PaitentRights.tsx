@@ -11,7 +11,7 @@ const PaitentRights: React.FC = () => {
         alignItems: "center",    // vertically center (optional)
         width: "100%",
         height: "100vh",
-        margin: 0,
+        margin: 50px 0px,
         padding: 0,
       }}
     >
@@ -21,6 +21,13 @@ const PaitentRights: React.FC = () => {
         height="100%" // iframe height
         style={{ border: "none" }}
       ></iframe>
+   <style jsx>{`
+        @media (max-width: 768px) {
+          .pdf-iframe {
+            width: 90%;      /* Mobile pe full width */
+          }
+        }
+      `}</style>
     </div>
   );
 };
