@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
-// ✅ Correct PDF.js worker (needed for Next.js + Azure)
+// ✅ Correct PDF.js worker for Next.js & Azure
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const PDFViewer: React.FC = () => {
@@ -12,6 +12,7 @@ const PDFViewer: React.FC = () => {
   return (
     <div style={{ width: "100%", textAlign: "center" }}>
       <Document
+        // ✅ Use relative path, not full Azure URL
         file="/images/pdf/bnoon-patients-rights.pdf"
         onLoadSuccess={({ numPages }) => setNumPages(numPages)}
         onLoadError={(error) => console.error("❌ PDF load error:", error)}
