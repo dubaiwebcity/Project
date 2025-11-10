@@ -478,7 +478,31 @@ const FertilityTabs: React.FC = () => {
             </button>
           ))}
         </div>
+<style jsx>{`
+  @media (max-width: 768px) {
+    .tabs-row-container {
+      flex-wrap: nowrap !important;      /* ek line me rakhe */
+      overflow-x: auto;                  /* scroll allow kare */
+      justify-content: flex-start !important; /* scroll start se */
+      -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    }
 
+    .tabs-row-container .tabs-btn {
+      flex: 0 0 auto;   /* button shrink na ho */
+      margin-right: 10px; /* buttons ke beech gap */
+    }
+        .image-col {
+      order: -1; /* image ko top pe le aao */
+      width: 100%; /* full width */
+      margin-bottom: 15px;
+    }
+      .tabs-container {
+    border: 1px solid #0000003d;
+    padding: 10px 10px !important;
+    /* margin: 0px 0px; */
+}
+  }
+`}</style>
         {/* Tabs Content */}
         <div className="row justify-content-center align-items-center g-4">
           <div className="col-lg-8 col-md-6">
@@ -488,7 +512,7 @@ const FertilityTabs: React.FC = () => {
             />
           </div>
 
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-4 col-md-6 image-col ">
             <img
               src={currentContent.image}
               alt={activeTab}
