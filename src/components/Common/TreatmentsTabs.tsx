@@ -289,18 +289,43 @@ const TreatmentsSection: React.FC = () => {
           </div>
       <div className="container tabs-container">
         {/* Tabs buttons */}
-        <div className="tabs-row-container mb-4 d-flex flex-wrap justify-content-center gap-2">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              className={`tabs-btn ${activeTab === tab ? "active" : ""}`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+       <div className="tabs-row-container mb-4 d-flex flex-wrap justify-content-center gap-2">
+  {tabs.map((tab) => (
+    <button
+      key={tab}
+      className={`tabs-btn ${activeTab === tab ? "active" : ""}`}
+    onClick={() => setActiveTab(tab)}
+    >
+      {tab}
+    </button>
+  ))}
+</div>
 
+<style jsx>{`
+  @media (max-width: 768px) {
+    .tabs-row-container {
+      flex-wrap: nowrap !important;      /* ek line me rakhe */
+      overflow-x: auto;                  /* scroll allow kare */
+      justify-content: flex-start !important; /* scroll start se */
+      -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    }
+
+    .tabs-row-container .tabs-btn {
+      flex: 0 0 auto;   /* button shrink na ho */
+      margin-right: 10px; /* buttons ke beech gap */
+    }
+        .image-col {
+      order: -1; /* image ko top pe le aao */
+      width: 100%; /* full width */
+      margin-bottom: 15px;
+    }
+      .tabs-container {
+    border: 1px solid #0000003d;
+    padding: 10px 10px !important;
+    /* margin: 0px 0px; */
+}
+  }
+`}</style>
         {/* Tabs Content */}
         <div className="row justify-content-center align-items-center g-4">
           <div className="col-lg-8 col-md-6">
@@ -309,7 +334,7 @@ const TreatmentsSection: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: currentContent.text }}
             />
           </div>
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-4 col-md-6 image-col">
             <img
               src={currentContent.image}
               alt={activeTab}
