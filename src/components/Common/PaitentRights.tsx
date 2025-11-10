@@ -8,23 +8,25 @@ const PaitentRights: React.FC = () => {
       style={{
         display: "flex",
         justifyContent: "center", // horizontally center
-        alignItems: "center",    // vertically center (optional)
+        alignItems: "center",    // vertically center
         width: "100%",
         height: "100vh",
-        margin: 50px 0px,
+        margin: "50px 0",
         padding: 0,
       }}
     >
       <iframe
+        className="pdf-iframe"          // className add kar diya
         src="/pdf/bnoon-patients-rights.pdf#toolbar=0&navpanes=0&scrollbar=0"
-        width="50%" // iframe width
-        height="100%" // iframe height
+        width="50%"                     // default desktop width
+        height="100%"                    // iframe height
         style={{ border: "none" }}
       ></iframe>
-   <style jsx>{`
+
+      <style jsx>{`
         @media (max-width: 768px) {
           .pdf-iframe {
-            width: 90%;      /* Mobile pe full width */
+            width: 100%;      /* Mobile pe full width */
           }
         }
       `}</style>
