@@ -11,7 +11,7 @@ export default function ClientTreatmentsPage() {
       <Navbar />
 
       {/* PageBanner with static content */}
-      <PageBanner bgImage="/images/treatments-banner.avif" />
+      <PageBanner bgImage="/images/treatments-banner.jpg" />
       <TreatmentsSection />
      <TreatmentsTabs />
     </>
