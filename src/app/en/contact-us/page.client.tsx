@@ -11,7 +11,7 @@ export default function ClientContactUsPage() {
       <Navbar />
 
       <PageBanner
-        bgImage="/images/contact-us-banner.avif"
+        bgImage="/images/contact-us-banner.jpg"
       />
        <ContactUsSection />
        <MediaSection />
