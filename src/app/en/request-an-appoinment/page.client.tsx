@@ -9,7 +9,7 @@ export default function RequestAppointmentPage() {
     <>
       <Navbar />
 
-      <PageBanner bgImage="/images/request-an-appointment.avif" />
+      <PageBanner bgImage="/images/request-an-appointment.jpg" />
 
       <AppointmentSection />
     </>
