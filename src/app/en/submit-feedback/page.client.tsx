@@ -9,7 +9,7 @@ export default function SubmitFeedbackPage() {
     <>
       <Navbar />
 
-      <PageBanner bgImage="/images/feedback-banner.avif" />
+      <PageBanner bgImage="/images/feedback-banner.jpg" />
 
       <FeedbackSection />
     </>
