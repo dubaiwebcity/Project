@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 const OurBlog = () => {
-  const [hoveredId, setHoveredId] = useState(null);
+const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const blogData = [
     {
