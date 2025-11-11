@@ -11,7 +11,7 @@ export default function ClientFertilityGuidePage() {
       <Navbar />
 
       {/* PageBanner with static content */}
-      <PageBanner bgImage="/images/fertility-guid-banner.avif" />
+      <PageBanner bgImage="/images/fertility-guid-banner.jpg" />
      <FertilityTabs />
 
      
