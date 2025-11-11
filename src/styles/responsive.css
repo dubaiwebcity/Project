@@ -1782,7 +1782,7 @@
     padding: 12px;
   }
   .how-it-work-card {
-    padding: 25px;
+    padding: 0px;
   }
   .choose-us-area {
     padding-top: 140px;
@@ -2026,7 +2026,6 @@
 @media (max-width: 767px) {
   .second-banner-content {
     max-width: 66%;
-    top: px;
 }
   .service-overview-content h4 {
     font-size: 18px !important;
