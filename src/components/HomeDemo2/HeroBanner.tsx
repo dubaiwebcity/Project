@@ -38,7 +38,7 @@ function HeroBanner() {
     {
       video: "images/banner/banner-5.mp4",
       title: "OVER 5,000 FAMILIES <br>HELPED ANNUALLY",
-      desc: "Compassionate care to achieve their dream of parenthood ",
+      desc: "Compassionate care to achieve <br>their dream of parenthood ",
       titleColor: "#004E78",
       descColor: "#004E78",
       buttonLink: "en/request-an-appoinment", // 👈 custom link
@@ -53,7 +53,7 @@ function HeroBanner() {
     },
     {
       video: "images/banner/banner-7.mp4",
-      title: "START YOUR PARENTHOOD JOURNEY WITH BNOON",
+      title: "START YOUR PARENTHOOD <br>JOURNEY WITH BNOON",
       desc: "Book your appointment today",
       titleColor: "#004E78",
       descColor: "#004E78",
