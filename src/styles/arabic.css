@@ -15556,6 +15556,29 @@ Second Banner Area CSS
 
 .second-banner-content {
   max-width: 60%;
+  top: 90px;
+  position: absolute;
+}
+ul.dropdown-menu.text-center.show {
+    width: 100%;
+    border-radius: 1px;
+}
+
+ul.dropdown-menu.show li:hover a {
+    background-color: #000;
+    color: #fff;
+}
+.search-bar select {
+  padding: 10px 20px 10px 15px;
+  color: #000;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("/images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 12px center; 
+  background-size: 14px; 
 }
 .second-banner-content .trust-info {
   display: inline-flex;
