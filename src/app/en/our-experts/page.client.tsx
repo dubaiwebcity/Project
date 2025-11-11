@@ -12,7 +12,7 @@ export default function ClientOurExpertsPage() {
       <Navbar />
 
       <PageBanner
-  bgImage="/images/experts-banner.avif"
+  bgImage="/images/experts-banner.jpg"
 />
 
       <OurExperts />
