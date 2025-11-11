@@ -1487,13 +1487,22 @@ progress {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
+    max-width: 1300px;
   }
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
   }
+}
+ul.dropdown-menu.show {
+    border-radius: 1px;
+    width: 100%;
+      padding: 0px;
+}
+ul.dropdown-menu.show li:hover a{
+    background-color: #000000;
+    color: #fff;
 }
 :root {
   --bs-breakpoint-xs: 0;
@@ -15545,6 +15554,8 @@ Second Banner Area CSS
 
 .second-banner-content {
   max-width: 66%;
+  top: 120px;
+    position: absolute;
 }
 .second-banner-content .trust-info {
   display: inline-flex;
