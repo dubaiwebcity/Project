@@ -9,7 +9,7 @@ export default function ClientOurSuccessPage() {
     <>
       <Navbar />
 
-      <PageBanner bgImage="/images/success-banner.avif" />
+      <PageBanner bgImage="/images/success-banner.jpg" />
 
       <SuccessSection />
     </>
