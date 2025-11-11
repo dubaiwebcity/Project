@@ -15593,7 +15593,7 @@ Second Banner Area CSS
   color: #ffffff;
 }
 .second-banner-content h1, .second-banner-content .h1 {
-  font-size: 60px;
+  font-size: 55px;
   margin-bottom: 15px;
   color: #ffffff;
   font-weight:600;
@@ -19262,4 +19262,20 @@ ease;
   .oregano-font {
     font-size: 15px;
   }
+}
+.search-bar select {
+  padding: 10px 40px 10px 15px; /* right padding ensures space before arrow */
+  color: #000;
+  background-color: #fff;
+
+  /* remove default arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* add your arrow image */
+  background-image: url("/images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 12px center; /* 👈 distance from right edge */
+  background-size: 14px; /* 👈 adjust arrow size as you like */
 }
