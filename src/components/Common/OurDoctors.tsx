@@ -48,15 +48,7 @@ const OurDoctors = () => {
       profileLink: "en/dr-asim-alwohaibi",
       location: "Riyadh",
     },
-    {
-      id: 5,
-      name: "Dr. Hussein Sabban",
-      qualification:
-        "Consultant, Obstetrics, Gynecology, Reproductive Endocrinology, & Infertility",
-      imageUrl: "images/doctors/5.jpg",
-      profileLink: "en/dr-hussein-sabban",
-      location: "Jeddah",
-    },
+   
     {
       id: 6,
       name: "Dr. Ahmed Alshaikh",
