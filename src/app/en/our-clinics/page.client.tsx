@@ -5,7 +5,7 @@ export default function ClientOurClinicsPage() {
   return (
     <>
       <Navbar />
-      <PageBanner bgImage="/images/clinics-banner.avif" />
+      <PageBanner bgImage="/images/clinics-banner.jpg" />
        <OurLocations />
 
     </>
