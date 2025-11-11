@@ -10,7 +10,7 @@ export default function ClientYourVisitPage() {
       <Navbar />
 
       {/* PageBanner with static content */}
-      <PageBanner bgImage="/images/visit-banner.avif" />
+      <PageBanner bgImage="/images/visit-banner.jpg" />
      <VisitTabs />
 
      
