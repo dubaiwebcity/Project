@@ -63,15 +63,7 @@ useEffect(() => {
       profileLink: "dr-asim-alwohaibi",
       location: "الرياض",
     },
-    {
-      id: 5,
-      name: "الدكتور حسين صبّان",
-      qualification:
-        "استشاري أمراض النساء والولادة والإخصاب وتأخر الحمل",
-      imageUrl: "/images/doctors/5.jpg",
-      profileLink: "dr-hussein-sabban",
-      location: "جدة",
-    },
+  
     {
       id: 6,
       name: "الدكتور أحمد الشيخ",
