@@ -5,7 +5,7 @@ export default function ClientBnoonRiyadhPage() {
   return (
     <>
       <Navbar />
-      <PageBanner bgImage="/images/clinics-banner.avif" />
+      <PageBanner bgImage="/images/clinics-banner.jpg" />
        <Riyadharea />
 
     </>
