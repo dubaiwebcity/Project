@@ -19,10 +19,6 @@
     padding-bottom: 20px;
   }
   .footer-area {
-    z-index: 1;
-    background: #004e78;
-    position: relative;
-    overflow: hidden;
     margin: 0px 0px 50px;
 }
      .service-overview-image {
@@ -2033,6 +2029,7 @@
 @media (max-width: 767px) {
   .second-banner-content {
     max-width: 66%;
+    top: 40px;
 }
   .service-overview-content h4 {
     font-size: 18px !important;
