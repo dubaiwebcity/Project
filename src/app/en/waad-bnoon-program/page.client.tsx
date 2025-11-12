@@ -10,7 +10,7 @@ export default function WaadBnoonPage() {
       <Navbar />
 
       {/* PageBanner with static content */}
-      <PageBanner bgImage="/images/waad-bnoon-banner.avif" />
+      <PageBanner bgImage="/images/waad-bnoon-banner.png" />
       <WaadSection />
      
     </>
