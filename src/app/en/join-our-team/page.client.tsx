@@ -9,7 +9,7 @@ export default function ClientJoinOurTeamPage() {
     <>
       <Navbar />
 
-      <PageBanner bgImage="/images/join-our-team.avif" />
+      <PageBanner bgImage="/images/join-our-team.jpg" />
 
       <TeamsSection />
     </>
