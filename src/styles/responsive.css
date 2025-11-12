@@ -18,6 +18,13 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  .footer-area {
+    z-index: 1;
+    background: #004e78;
+    position: relative;
+    overflow: hidden;
+    margin: 0px 0px 50px;
+}
      .service-overview-image {
     width: 85%;
          margin-bottom: 20px;
