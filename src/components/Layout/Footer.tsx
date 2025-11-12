@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import MobileTopTools from "@/components/Common/MobileTopTools"; // ye aapka custom component hoga
 // Define interfaces for our data structure
 interface SocialLink {
   platform: string;
@@ -232,6 +232,10 @@ function Footer() {
           </div>
         </div>
       </div>
+        {/* Mobile tools */}
+        <div className="d-block d-md-none">
+          <MobileTopTools />
+        </div>
     </footer>
   );
 }
