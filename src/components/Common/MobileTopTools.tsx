@@ -20,7 +20,7 @@ const MobileTopTools: React.FC = () => {
       </a>
 
       {/* Jeddah */}
-      <a href="tel:+966126800800" className="tool-btn">
+      <a href="tel:+966 12 680 0800" className="tool-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="30.499 30 139 139.999"
@@ -34,7 +34,7 @@ const MobileTopTools: React.FC = () => {
       </a>
 
       {/* Book Appointment */}
-      <a href="/book-appointment" className="tool-btn">
+      <a href="request-an-appoinment" className="tool-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="29.5 29.5 141 141"
