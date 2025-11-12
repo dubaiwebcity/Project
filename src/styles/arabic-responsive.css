@@ -16,6 +16,11 @@
     width: 85%;
          margin-bottom: 20px;
   }
+    .second-banner-content {
+    max-width: 60%;
+    top: 40px;
+    position: absolute;
+}
   .pt-140 {
     padding-top: 20px;
   }
@@ -438,8 +443,15 @@ p.terms-text {
     font-size: 13px !important;
 }
   .second-banner-content .banner-btn {
-    margin-top: 25px;
+    margin-top: 15px;
   }
+    .footer-area {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: #004e78;
+    margin: 0px 0px 50px;
+}
   .urgent-help-area {
     margin-top: 50px;
   }
