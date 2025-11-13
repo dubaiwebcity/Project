@@ -134,7 +134,7 @@ const DrAhmedAlshaikh = () => {
 
 
 
-          <div className="col-xl-5 col-md-12 d-flex flex-column justify-content-center text-center">
+          <div className="col-xl-5 col-md-12 d-flex flex-column justify-content-center text-center image-column">
             <img
               className="doctors-overview-image"
               src={imageRiyadh}
