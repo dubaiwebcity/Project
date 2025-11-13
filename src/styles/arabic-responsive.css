@@ -12,6 +12,9 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
+    .image-column {
+        order: -1;
+      }
        .service-overview-image {
     width: 85%;
          margin-bottom: 20px;
