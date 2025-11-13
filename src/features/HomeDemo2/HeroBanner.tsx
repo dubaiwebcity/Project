@@ -3,29 +3,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-function HeroBanner() {
+function HeroBannerAr() {
   const [bgPosition, setBgPosition] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [animate, setAnimate] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
 
   // ✅ Slides (video + text + buttonLink)
   const slides = [
-
     {
       video: "images/ar-banner/2.mp4",
-     title: '<span class="font-program">برنامج</span> <span class="font-xbtitre">وعد بنون</span>',
-      desc: "الحمل أو استرداد الرسوم :<br>راحة بال. توتر أقل۔",
+      title: '<span class="font-program">برنامج</span> <span class="font-xbtitre">وعد بنون</span>',
+      desc: "الحمل أو استرداد الرسوم :<br>راحة بال. توتر أقل.",
       titleColor: "#004E78",
       descColor: "#004E78",
       extra: "تطبق الشروط والأحكام",
-      buttonLink: "ar/waad-bnoon-program", // 👈 custom link
+      buttonLink: "ar/waad-bnoon-program",
       buttonText: "استكشفوا المزيد",
     },
     {
       video: "images/ar-banner/3.mp4",
       title: "المستقبل الواعد في <br>مجال علاجات الإخصاب",
-      desc: "الآن في الرياض وجدة ",
-      buttonLink: "ar/request-an-appoinment", // 👈 custom link
-      buttonText: "احجز الآن",
+      desc: "الآن في الرياض وجدة ",
+      buttonLink: "ar/request-an-appoinment",
+      buttonText: "احجز الآن",
     },
     {
       video: "images/ar-banner/4.mp4",
@@ -33,25 +34,24 @@ function HeroBanner() {
       desc: "الأمل يبدأ مع بنون",
       titleColor: "#004E78",
       descColor: "#004E78",
-      buttonLink: "ar/request-an-appoinment", // 👈 custom link
-      buttonText: "احجز الآن",
+      buttonLink: "ar/request-an-appoinment",
+      buttonText: "احجز الآن",
     },
     {
       video: "images/ar-banner/5.mp4",
-     title: 'تقديم الرعاية لأكثر من <br><span class="highlight-number">5000</span> من الأزواج سنويًا',
-
+      title: 'تقديم الرعاية لأكثر من <br><span class="highlight-number">5000</span> من الأزواج سنويًا',
       desc: "لتحقيق حلمهم في الأمومة والأبوة",
       titleColor: "#004E78",
       descColor: "#004E78",
-      buttonLink: "ar/request-an-appoinment", // 👈 custom link
-      buttonText: "احجز الآن",
+      buttonLink: "ar/request-an-appoinment",
+      buttonText: "احجز الآن",
     },
     {
       video: "images/ar-banner/6.mp4",
       title: "الجيل القادم من <br>علاجات الإخصاب",
       desc: "الآن في السعودية",
-      buttonLink: "ar/request-an-appoinment", // 👈 custom link
-      buttonText: "احجز الآن",
+      buttonLink: "ar/request-an-appoinment",
+      buttonText: "احجز الآن",
     },
     {
       video: "images/ar-banner/7.mp4",
@@ -59,12 +59,10 @@ function HeroBanner() {
       desc: "احجزوا موعدكم معنا اليوم",
       titleColor: "#004E78",
       descColor: "#004E78",
-      buttonLink: "ar/request-an-appoinment", // 👈 custom link
-      buttonText: "احجز الآن",
+      buttonLink: "ar/request-an-appoinment",
+      buttonText: "احجز الآن",
     },
   ];
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   // ✅ Auto slide change (10s)
   useEffect(() => {
@@ -86,10 +84,18 @@ function HeroBanner() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ Trigger reveal animation on slide change
+  useEffect(() => {
+    setAnimate(false);
+    const timer = setTimeout(() => setAnimate(true), 500);
+    return () => clearTimeout(timer);
+  }, [currentSlide]);
+
   return (
     <div
       ref={bannerRef}
       className="second-banner-area"
+      dir="rtl"
       style={{
         position: "relative",
         width: "100%",
@@ -126,37 +132,37 @@ function HeroBanner() {
       {/* 🔹 Text Content */}
       <div className="container">
         <div
-          className="second-banner-content section-title-animation animation-style2"
-          style={{
-            opacity: 1,
-            transition: "opacity 1s ease-in-out",
-          }}
+          className={`second-banner-content ${
+            animate ? "reveal-text" : "hidden-text"
+          }`}
         >
-          {/* Title */}
           <h1
-            style={{ color: slides[currentSlide].titleColor || "#fff" }}
-            dangerouslySetInnerHTML={{ __html: slides[currentSlide].title }}
+            style={{
+              color: slides[currentSlide].titleColor || "#fff",
+            }}
+            dangerouslySetInnerHTML={{
+              __html: slides[currentSlide].title,
+            }}
+            className="animated-heading"
           />
 
-          {/* Description */}
           <p
-            dangerouslySetInnerHTML={{ __html: slides[currentSlide].desc }}
+            className="animated-desc"
+            dangerouslySetInnerHTML={{
+              __html: slides[currentSlide].desc,
+            }}
             style={{ color: slides[currentSlide].descColor || "#fff" }}
           />
 
-          {/* Button with slide-specific link */}
-       <div className="banner-btn">
-  <Link
-    href={slides[currentSlide].buttonLink}
-    className="btn btn-success btn-appointment btn-banner"
-  >
-    {slides[currentSlide].buttonText}
-  </Link>
-</div>
+          <div className="banner-btn">
+            <Link
+              href={slides[currentSlide].buttonLink}
+              className="btn btn-success btn-appointment btn-banner"
+            >
+              {slides[currentSlide].buttonText}
+            </Link>
+          </div>
 
-
-
-          {/* Extra Text */}
           <p
             className="terms-text"
             dangerouslySetInnerHTML={{
@@ -164,22 +170,12 @@ function HeroBanner() {
             }}
             style={{
               color: slides[currentSlide].descColor || "#fff",
-              // ❌ remove this line
-    // fontSize: slides[currentSlide].extraFontSize || "inherit",
             }}
           />
         </div>
       </div>
-<style jsx>{`
-  /* ✅ Mobile only: override the inline height */
-  @media (max-width: 768px) {
-    .second-banner-area {
-      height: 200px !important; /* 👈 removes the fixed height */
-    }
-  }
-`}</style>
 
-      {/* 🔹 Slider Dots */}
+      {/* 🔹 Dots */}
       <div
         style={{
           position: "absolute",
@@ -206,8 +202,23 @@ function HeroBanner() {
           />
         ))}
       </div>
+
+     {/* 🔹 Reveal Animation CSS */}
+      <style jsx>{`
+        .hidden-text {
+          opacity: 0;
+          transform: translateX(80px);
+        }
+        .reveal-text {
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 1.5s ease;
+        }
+      `}</style>
+    
+    
     </div>
   );
 }
 
-export default HeroBanner;
+export default HeroBannerAr;
