@@ -387,6 +387,8 @@
   /* Home Two Responsive */
   .second-banner-area {
     padding-top: 50px;
+      height: 200px !important;
+    }
   }
   p.popup-text {
     font-size: 12px !important;
