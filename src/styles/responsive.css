@@ -13,11 +13,21 @@
     max-width: 100%;
   }
 }
+   @media (max-width: 768px) {
+      .image-column {
+        order: -1;
+      }
 @media only screen and (max-width: 767px) {
   .ptb-140 {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+   .image-column {
+        order: -1;
+      }
+  .doctor-content {
+    padding-right: 0px;
+}
   .footer-area {
     margin: 0px 0px 50px;
 }
