@@ -1254,7 +1254,7 @@ p.terms-text {
   .second-banner-area {
     padding-top: 50px;
     height: 200px !important;
-
+}
   .second-banner-area .container-fluid {
     padding-left: calc(var(--bs-gutter-x) * 0.5);
     padding-right: calc(var(--bs-gutter-x) * 0.5);
