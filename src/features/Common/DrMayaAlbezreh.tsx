@@ -126,7 +126,7 @@ const DrMayaAlbezreh = () => {
 
 
 
-          <div className="col-xl-5 col-md-12">
+          <div className="col-xl-5 col-md-12 image-column">
             <div>
               <img
                 className="doctors-overview-image"
