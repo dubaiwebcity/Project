@@ -5,25 +5,27 @@ import Link from "next/link";
 
 function HeroBanner() {
   const [bgPosition, setBgPosition] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [animate, setAnimate] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
 
   // ✅ Slides (video + text + buttonLink)
   const slides = [
-     {
-    video: "images/banner/banner-2.mp4",
-    title: "<span class='rowdies-font'>WA'AD BNOON</span> <span class='oregano-font'>PROGRAM</span>",
-    desc: "<strong>Get Pregnant or Your Money Back:</strong><br><em>Peace of Mind. Less Stress</em>",
-    titleColor: "#004E78",
-    descColor: "#004E78",
-    extra: "*Terms & Conditions Apply",
-    buttonLink: "en/waad-bnoon-program",
-    buttonText: "Book Now",
-  },
+    {
+      video: "images/banner/banner-2.mp4",
+      title: "<span class='rowdies-font'>WA'AD BNOON</span> <span class='oregano-font'>PROGRAM</span>",
+      desc: "<strong>Get Pregnant or Your Money Back:</strong><br><em>Peace of Mind. Less Stress</em>",
+      titleColor: "#004E78",
+      descColor: "#004E78",
+      extra: "*Terms & Conditions Apply",
+      buttonLink: "en/waad-bnoon-program",
+      buttonText: "Book Now",
+    },
     {
       video: "images/banner/banner-3.mp4",
       title: "THE FUTURE OF<br>FERTILITY IS HERE",
       desc: "Now in Riyadh and Jeddah",
-      buttonLink: "en/request-an-appoinment", // 👈 custom link
+      buttonLink: "en/request-an-appoinment",
       buttonText: "Book Now",
     },
     {
@@ -32,7 +34,7 @@ function HeroBanner() {
       desc: "Hope begins with Bnoon",
       titleColor: "#004E78",
       descColor: "#004E78",
-      buttonLink: "en/request-an-appoinment", // 👈 custom link
+      buttonLink: "en/request-an-appoinment",
       buttonText: "Book Now",
     },
     {
@@ -41,14 +43,14 @@ function HeroBanner() {
       desc: "Compassionate care to achieve <br>their dream of parenthood ",
       titleColor: "#004E78",
       descColor: "#004E78",
-      buttonLink: "en/request-an-appoinment", // 👈 custom link
+      buttonLink: "en/request-an-appoinment",
       buttonText: "Book Now",
     },
     {
       video: "images/banner/banner-6.mp4",
       title: "THE NEXT-GENERATION <br>OF FERTILITY CARE",
       desc: "Now in Saudi Arabia",
-      buttonLink: "en/request-an-appoinment", // 👈 custom link
+      buttonLink: "en/request-an-appoinment",
       buttonText: "Book Now",
     },
     {
@@ -57,12 +59,10 @@ function HeroBanner() {
       desc: "Book your appointment today",
       titleColor: "#004E78",
       descColor: "#004E78",
-      buttonLink: "en/request-an-appoinment", // 👈 custom link
+      buttonLink: "en/request-an-appoinment",
       buttonText: "Book Now",
     },
   ];
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   // ✅ Auto slide change (10s)
   useEffect(() => {
@@ -83,6 +83,13 @@ function HeroBanner() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // ✅ Trigger reveal animation on slide change
+  useEffect(() => {
+    setAnimate(false);
+    const timer = setTimeout(() => setAnimate(true), 500); // wait until video fade-in
+    return () => clearTimeout(timer);
+  }, [currentSlide]);
 
   return (
     <div
@@ -124,37 +131,29 @@ function HeroBanner() {
       {/* 🔹 Text Content */}
       <div className="container">
         <div
-          className="second-banner-content section-title-animation animation-style2"
-          style={{
-            opacity: 1,
-            transition: "opacity 1s ease-in-out",
-          }}
+          className={`second-banner-content ${
+            animate ? "reveal-text" : "hidden-text"
+          }`}
         >
-          {/* Title */}
           <h1
             style={{ color: slides[currentSlide].titleColor || "#fff" }}
             dangerouslySetInnerHTML={{ __html: slides[currentSlide].title }}
           />
 
-          {/* Description */}
           <p
             dangerouslySetInnerHTML={{ __html: slides[currentSlide].desc }}
             style={{ color: slides[currentSlide].descColor || "#fff" }}
           />
 
-          {/* Button with slide-specific link */}
-       <div className="banner-btn">
-  <Link
-    href={slides[currentSlide].buttonLink}
-    className="btn btn-success btn-appointment btn-banner"
-  >
-    {slides[currentSlide].buttonText}
-  </Link>
-</div>
+          <div className="banner-btn">
+            <Link
+              href={slides[currentSlide].buttonLink}
+              className="btn btn-success btn-appointment btn-banner"
+            >
+              {slides[currentSlide].buttonText}
+            </Link>
+          </div>
 
-
-
-          {/* Extra Text */}
           <p
             className="terms-text"
             dangerouslySetInnerHTML={{
@@ -162,8 +161,6 @@ function HeroBanner() {
             }}
             style={{
               color: slides[currentSlide].descColor || "#fff",
- // ❌ remove this line
-    // fontSize: slides[currentSlide].extraFontSize || "inherit",
             }}
           />
         </div>
@@ -196,6 +193,19 @@ function HeroBanner() {
           />
         ))}
       </div>
+
+      {/* 🔹 Reveal Animation CSS */}
+      <style jsx>{`
+        .hidden-text {
+          opacity: 0;
+          transform: translateX(-80px);
+        }
+        .reveal-text {
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 1.5s ease;
+        }
+      `}</style>
     </div>
   );
 }
