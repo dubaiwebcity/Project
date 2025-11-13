@@ -127,7 +127,7 @@ const DrAhmadHaroun = () => {
 
 
 
-          <div className="col-xl-5 col-md-12 d-flex flex-column justify-content-center text-center">
+          <div className="col-xl-5 col-md-12 d-flex flex-column justify-content-center text-center image-column">
             <img
               className="doctors-overview-image"
               src={imageRiyadh}
@@ -143,6 +143,13 @@ const DrAhmadHaroun = () => {
                 Request an Appointment
               </Link>
             </div>
+             <style jsx>{`
+    @media (max-width: 768px) {
+      .image-column {
+        order: -1;
+      }
+    }
+  `}</style>
           </div>
 
           <div className="col-xl-12 col-md-12">
