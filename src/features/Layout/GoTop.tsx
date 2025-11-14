@@ -3,36 +3,56 @@
 import React, { useEffect, useState } from "react";
 
 const GoTop = () => {
-  // The back-to-top button is hidden at the beginning
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 150) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    });
+    const checkScroll = () => {
+      setShowButton(window.pageYOffset > 150);
+    };
+
+    window.addEventListener("scroll", checkScroll);
+    return () => window.removeEventListener("scroll", checkScroll);
   }, []);
 
-  // This function will scroll the window to the top
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // for smoothly scrolling
-    });
-  };
+  // Your WhatsApp number
+  const whatsappNumber = "966114448080"; 
+  const message = "Hello! I want to know more.";
+
+  // Correct WhatsApp URL
+  const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+    message
+  )}`;
 
   return (
     <>
       {showButton && (
-        <div
-          className="back-to-top position-fixed text-center border-0 p-0"
-          onClick={scrollToTop}
+        <a
+          href={whatsappURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-btn position-fixed border-0 p-0"
+          style={{
+            bottom: "20px",
+            right: "20px",
+            zIndex: 999,
+            width: "55px",
+            height: "55px",
+            borderRadius: "50%",
+            overflow: "hidden",
+            cursor: "pointer",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+          }}
         >
-          <i className="ri-arrow-up-s-line"></i>
-        </div>
+          <img
+            src="/images/WhatsApp.svg"
+            alt="WhatsApp"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </a>
       )}
     </>
   );
