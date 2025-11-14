@@ -32,7 +32,7 @@ const GoTop = () => {
           rel="noopener noreferrer"
           className="whatsapp-btn position-fixed border-0 p-0"
           style={{
-            bottom: "20px",
+            bottom: "50px",
             right: "20px",
             zIndex: 999,
             width: "55px",
