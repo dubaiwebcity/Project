@@ -64,7 +64,7 @@ const OurBlog = () => {
   <iframe
     src={post.embedMap} // <-- yahi har card ka map show karega
     width="100%"
-    height="220"
+    height="200"
     style={{ border: "0" }}
     allowFullScreen
     loading="lazy"
