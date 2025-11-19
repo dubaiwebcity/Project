@@ -8,12 +8,12 @@ const OurLocations = () => {
   const imageKingSalman = "/images/locations/bnoon-north-riiyadh.avif";
 
   // Type-safe animation variants
-  const variantsLeft = {
+ const variantsLeft: Variants = {
     hidden: { x: 100, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
   };
 
- const variantsRight = {
+ const variantsRight: Variants = {
     hidden: { x: -100, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
   };
