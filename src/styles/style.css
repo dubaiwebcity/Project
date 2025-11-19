@@ -14508,9 +14508,14 @@ Doctors Area CSS
 }
 
 .doctor-card:hover {
-  transform: translateY(-5px);
+ 
 }
-
+.mail-btn {
+    background-color: #004e78 !important;
+}
+.mail-btn:hover {
+    background-color: #fff !important; /* hover color */
+}
 .doctor-card .content h3 {
   margin-top: 15px;
   font-size: 18px;
