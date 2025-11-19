@@ -39,26 +39,28 @@ function OurServices() {
     const refs = useRef<(HTMLDivElement | null)[]>([]);
   const [visible, setVisible] = useState<{ [key: number]: boolean }>({});
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-       entries.forEach((entry) => {
-  if (entry.isIntersecting) {
-    const index = refs.current.indexOf(entry.target as HTMLDivElement);
-    if (index !== -1) {
-      setVisible((prev) => ({ ...prev, [index]: true }));
-    }
-  }
-});
+ useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = refs.current.indexOf(entry.target as HTMLDivElement);
+          if (index !== -1) {
+            setVisible((prev) => ({ ...prev, [index]: true }));
+          }
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-      },
-      { threshold: 0.2 }
-    );
+  refs.current.forEach((ref) => {
+    if (ref) observer.observe(ref); // ✅ ignore null
+  });
 
-    refs.current.forEach((ref) => observer.observe(ref));
+  return () => observer.disconnect();
+}, []);
 
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div className="services-area mt-5">
