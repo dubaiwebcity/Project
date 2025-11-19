@@ -58,13 +58,15 @@ function OurServices() {
               </div>
             </div>
 <div className="container-fluid px-0">
-  <div className="row justify-content-center g-4 ">
-    {servicesData.map((service, index) => (
-      <div 
-        key={index} 
-        className="col-md-6 mx-auto px-0" 
-        style={{ maxWidth: "600px" }}
-      >
+   <div className="row justify-content-center g-4">
+  {servicesData.map((service, index) => (
+    <div
+  key={index}
+  className={`col-md-6 mx-auto px-0 ${
+    index % 2 === 0 ? "animate-left" : "animate-right"
+  }`}
+  style={{ maxWidth: "600px" }}
+>
        <div className="service-card wrap2">
   <div className="top">
     {/* Row: Heading + Icon */}
