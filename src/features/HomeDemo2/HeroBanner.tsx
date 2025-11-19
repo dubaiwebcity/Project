@@ -99,7 +99,7 @@ function HeroBannerAr() {
       style={{
         position: "relative",
         width: "100%",
-        height: "65vh",
+        height: "535px",
         overflow: "hidden",
         backgroundPosition: `center ${bgPosition}px`,
         backgroundAttachment: "fixed",
