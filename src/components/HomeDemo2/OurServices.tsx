@@ -86,7 +86,10 @@ function OurServices() {
               {servicesData.map((service, index) => (
                 <div
                   key={index}
-                  ref={(el) => (refs.current[index] = el)}
+                  ref={(el) => {
+  refs.current[index] = el;
+}}
+
                   className={`col-md-6 mx-auto px-0`}
                   style={{
                     maxWidth: "600px",
