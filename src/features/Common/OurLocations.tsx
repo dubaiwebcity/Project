@@ -1,7 +1,7 @@
 
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants, easeOut } from "framer-motion";
 
 const OurLocations = () => {
   const imageRiyadh = "/images/locations/bnoon-riyadh.avif";
