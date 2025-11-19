@@ -72,7 +72,7 @@ const OurLocations = () => {
 
         {/* Jeddah Section */}
         <motion.div
-          className="row justify-content-center align-items-center g-4 mt-5"
+          className="row justify-content-center align-items-center g-4 mt-5 flex-column-reverse flex-md-row"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
