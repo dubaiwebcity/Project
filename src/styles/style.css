@@ -14254,7 +14254,7 @@ Services Area CSS
   z-index: -1;
 }
 .service-card:hover {
-  transform: translateY(-10px) scale(1.03);
+ 
 }
 .service-card:hover:before {
   transform: scale(1);
@@ -14685,7 +14685,7 @@ Doctors Area CSS
   z-index: -1;
 }
 .doctor-card:hover {
-  transform: translateY(-10px) scale(1.03);
+
 }
 .doctor-card:hover:before {
   transform: scale(1);
@@ -15485,7 +15485,7 @@ h3 a {
   transform: translateX(5px);
 }
 .blog-card:hover {
-  transform: translateY(-5px);
+ 
 }
 .blog-card:hover .image a img {
   transform: scale(1.1);
@@ -15813,7 +15813,7 @@ Second About Area CSS
   z-index: -1;
 }
 .second-about-items .item:hover {
-  transform: translateY(-10px) scale(1.03);
+
 }
 .second-about-items .item:hover:before {
   transform: scale(1);
@@ -16494,7 +16494,6 @@ Service Overview Area CSS
   transition: 0.7s;
 }
 .service-overview-image:hover img {
-  transform: scale(1.1);
 }
 .service-overview-content {
   padding-left: 0px;
