@@ -39,6 +39,9 @@
     background: #004e78;
    margin: 0 0 50px;
 }
+    .second-about-content h2 {
+    font-size: 20px;
+  }
 }
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
@@ -538,7 +541,7 @@
     margin-bottom: 0;
   }
   .second-about-content h2 {
-    font-size: 20px;
+    font-size: 30px;
   }
   .second-about-items {
     max-width: 100%;
@@ -1314,7 +1317,7 @@
     margin: 0 0;
   }
   .how-it-work-card {
-    padding: 25px;
+    padding: px;
   }
   .choose-us-area {
     padding-top: 100px;
@@ -1615,7 +1618,7 @@
     margin: 0 0;
   }
   .how-it-work-card {
-    padding: 25px;
+    padding: px;
   }
   .choose-us-area {
     padding-top: 100px;
@@ -1879,7 +1882,7 @@
     padding: 12px;
   }
   .how-it-work-card {
-    padding: 25px;
+    padding: px;
   }
   .choose-us-area {
     padding-top: 140px;
