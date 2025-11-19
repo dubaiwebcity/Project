@@ -1,6 +1,5 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+
+import React, { useState, useEffect, useRef } from "react";
 
 function OurServices() {
   // Dynamic data for services
@@ -38,9 +37,33 @@ function OurServices() {
      
     },
   ];
+ // Animation refs
+    const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const [visible, setVisible] = useState<{ [key: number]: boolean }>({});
+
+ useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = refs.current.indexOf(entry.target as HTMLDivElement);
+          if (index !== -1) {
+            setVisible((prev) => ({ ...prev, [index]: true }));
+          }
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  refs.current.forEach((ref) => {
+    if (ref) observer.observe(ref); // ✅ ignore null
+  });
+
+  return () => observer.disconnect();
+}, []);
 
   return (
-    <>
       <div className="services-area mt-5">
         <div className="inner ptb-140">
           <div className="container">
@@ -57,60 +80,57 @@ function OurServices() {
                 </div>
               </div>
             </div>
-<div className="container-fluid px-0">
-              <div className="row justify-content-center g-4">
-                {servicesData.map((service, index) => (
-                  <div
-                    key={index}
-                    className="col-md-6 mx-auto px-0"
-                    style={{ maxWidth: "600px" }}
-                  >
-                    <div className="service-card wrap2">
-                      <div className="top">
-                        <div
-                          className="d-flex align-items-center mb-2"
-                          style={{
-                            justifyContent: "space-between",
-                            gap: "20px",
-                          }}
-                        >
-                          <h3 className="mb-0">{service.title}</h3>
-                          <div className="icon flex-shrink-0">
-                            <img
-                              src={service.icon}
-                              alt="icon"
-                              width={70}
-                              height={70}
-                            />
-                          </div>
-                        </div>
-                        <p>{service.description}</p>
+   <div className="container-fluid px-0">
+            <div className="row justify-content-center g-4">
+
+              {servicesData.map((service, index) => (
+                <div
+                  key={index}
+                  ref={(el) => {
+  refs.current[index] = el;
+}}
+
+                  className={`col-md-6 mx-auto px-0`}
+                  style={{
+                    maxWidth: "600px",
+
+                    opacity: visible[index] ? 1 : 0,
+                    transform: visible[index]
+                      ? "translateX(0)"
+                      : index % 2 === 0
+                      ? "translateX(50px)"
+                      : "translateX(-50px)",
+                    transition: "all 0.6s ease-out",
+                  }}
+                >
+                  <div className="service-card wrap2">
+                    <div className="top">
+                      <div
+                        className="d-flex align-items-center mb-2"
+                        style={{ justifyContent: "space-between", gap: "20px" }}
+                      >
+                        <h3 className="mb-0">{service.title}</h3>
+
+                        <img
+                          src={service.icon}
+                          alt="icon"
+                          width={70}
+                          height={70}
+                        />
                       </div>
+
+                      <p>{service.description}</p>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+
             </div>
           </div>
+
         </div>
       </div>
-
-      {/* ✅ Move your style block INSIDE the return */}
-      <style jsx>{`
-        /* 🔹 Only for mobile view (≤768px) */
-        @media (max-width: 768px) {
-          .services-area .container-fluid {
-            padding-left: 15px !important;
-            padding-right: 15px !important;
-          }
-
-          .services-area .service-card {
-            margin-left: 5px;
-            margin-right: 5px;
-          }
-        }
-      `}</style>
-    </>
+    </div>
   );
 }
 
