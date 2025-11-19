@@ -101,7 +101,7 @@ const SearchBar = () => {
         <div className="search-overview-content">
           <h2
             ref={headerRef}
-            className={`animate-left ${headerVisible ? "show" : ""}`}
+            className={`animate-right ${headerVisible ? "show" : ""}`}
           >
             ابحث عن طبيب
           </h2>
