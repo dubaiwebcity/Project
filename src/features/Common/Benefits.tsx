@@ -81,7 +81,7 @@ const Benefits = () => {
             ref={leftRef}
             style={{
               opacity: leftVisible ? 1 : 0,
-              transform: leftVisible ? "translateX(0)" : "translateX(-50px)",
+              transform: leftVisible ? "translateX(0)" : "translateX(50px)",
               transition: "all 0.5s ease-out",
             }}
           >
@@ -114,7 +114,7 @@ const Benefits = () => {
             ref={rightRef}
             style={{
               opacity: rightVisible ? 1 : 0,
-              transform: rightVisible ? "translateX(0)" : "translateX(50px)",
+              transform: rightVisible ? "translateX(0)" : "translateX(-50px)",
               transition: "all 0.5s ease-out",
             }}
           >
