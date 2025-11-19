@@ -36,7 +36,7 @@ function OurServices() {
   ];
 
   // Animation refs
-    const refs = useRef<HTMLDivElement[]>([]);
+    const refs = useRef<(HTMLDivElement | null)[]>([]);
   const [visible, setVisible] = useState<{ [key: number]: boolean }>({});
 
   useEffect(() => {
