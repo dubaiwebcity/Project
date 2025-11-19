@@ -36,8 +36,8 @@ function OurServices() {
   ];
 
   // Animation refs
-  const refs = useRef([]);
-  const [visible, setVisible] = useState([]);
+    const refs = useRef<HTMLDivElement[]>([]);
+  const [visible, setVisible] = useState<{ [key: number]: boolean }>({});
 
   useEffect(() => {
     const observer = new IntersectionObserver(
