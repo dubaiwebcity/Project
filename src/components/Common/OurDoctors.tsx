@@ -140,15 +140,12 @@ const OurDoctors = () => {
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="row g-4">
           {doctorsData.map((doctor) => (
             <motion.div
               key={doctor.id}
               className="col-xl-3 col-md-6"
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="doctor-card">
                 <div className="image-wrapper">
@@ -201,7 +198,7 @@ const OurDoctors = () => {
         .image-overlay {
           position: absolute; top: 0; left: 0; width: 100%; height: 100%;
           background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;
-          opacity: 0; transition: opacity 0.3s ease; border-radius: 10px;
+          opacity: 0; border-radius: 10px;
         }
         .image-overlay .doctor-btn { padding: 10px 20px; color: #fff; border-radius: 5px; }
       `}</style>
