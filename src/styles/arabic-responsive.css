@@ -27,6 +27,18 @@
     padding: 4px 20px !important;
     font-size: 13px !important;
 }
+      .page-banner-area {
+    margin: 0 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+        .footer-area {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: #004e78;
+   margin: 0 0 50px;
+}
 }
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
@@ -145,7 +157,10 @@
   .form-input {
     width: 100%;
 }
-
+     .page-banner-area {
+    margin: 0 0;
+ 
+  }
   .copyright-area .lists li {
     list-style-type: none;
     font-size: 12px;
@@ -481,7 +496,7 @@
     z-index: 1;
     overflow: hidden;
     background: #004e78;
-    margin: 0px 0px 50px;
+   
 }
   .urgent-help-area {
     margin-top: 50px;
@@ -751,11 +766,7 @@
     padding: 50px 20px;
   }
   /* Inner Pages Responsive */
-  .page-banner-area {
-    margin: 0 0;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+
   .page-banner-content .meta {
     margin-right: 0;
     padding: 0 0 15px 0;
