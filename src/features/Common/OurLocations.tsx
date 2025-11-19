@@ -1,21 +1,38 @@
+
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 const OurLocations = () => {
-  // Alag images for each section
   const imageRiyadh = "/images/locations/bnoon-riyadh.avif";
   const imageJeddah = "/images/locations/bnoon-jeddah.avif";
   const imageKingSalman = "/images/locations/bnoon-north-riiyadh.avif";
+
+  // Motion variants
+  const variantsLeft = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
+  };
+
+  const variantsRight = {
+    hidden: { x: 100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
+  };
 
   return (
     <div className="service-overview-area mb-5 mt-5">
       <div className="container">
 
         {/* Riyadh Section */}
-        <div className="row justify-content-center align-items-center g-4">
-          <div className="col-xl-6 col-md-12">
+        <motion.div
+          className="row justify-content-center align-items-center g-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div className="col-xl-6 col-md-12" variants={variantsRight}>
             <div className="service-overview-content">
-              <h2>بنون – الرياض</h2>
+                <h2>بنون – الرياض</h2>
               <p>
                 على مدار أكثر من 12 عاماً، استطاع مركز "بنون" في الرياض أن يرسّخ مكانته كأحد أكثر المراكز موثوقية في طب الخصوبة وصحة المرأة والرجل في المملكة. من خلال نهج يضع المريض أولاً، يجمع المركز بين الرعاية الإنسانية والتكنولوجيا المتقدمة، ويضم فريقاً من أبرز الاستشاريين في طب الإخصاب، ما جعله وجهة مفضّلة للعائلات الباحثة عن رعاية متخصصة ونتائج ملموسة.
               </p>
@@ -41,40 +58,37 @@ const OurLocations = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="col-xl-6 col-md-12">
+          <motion.div className="col-xl-6 col-md-12" variants={variantsLeft}>
             <div
               className="service-overview-image"
-              style={{
-                boxShadow: "-50px 50px 0px #d7f2fb",
-                overflow: "hidden",
-                display: "inline-block",
-              }}
+              style={{ boxShadow: "-50px 50px 0px #d7f2fb", overflow: "hidden", display: "inline-block" }}
             >
               <img src={imageRiyadh} alt="بنون الرياض" width={580} height={450} />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Jeddah Section */}
-        <div className="row justify-content-center align-items-center g-4 mt-5 flex-column-reverse flex-md-row">
-          <div className="col-xl-5 col-md-12">
+        <motion.div
+          className="row justify-content-center align-items-center g-4 mt-5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div className="col-xl-5 col-md-12" variants={variantsRight}>
             <div
               className="service-overview-image"
-              style={{
-                boxShadow: "50px 50px 0px #d7f2fb",
-                overflow: "hidden",
-                display: "inline-block",
-              }}
+              style={{ boxShadow: "50px 50px 0px #d7f2fb", overflow: "hidden", display: "inline-block" }}
             >
               <img src={imageJeddah} alt="بنون جدة" width={580} height={450} />
             </div>
-          </div>
+          </motion.div>
 
-          <div className="col-xl-6 col-md-12">
+          <motion.div className="col-xl-6 col-md-12" variants={variantsLeft}>
             <div className="service-overview-content">
-              <h2>بنون – جدة</h2>
+             <h2>بنون – جدة</h2>
               <p>
                 انضم إلى شبكة "بنون" في يونيو 2025 (وكان يُعرف سابقاً بمركز "هيلث بلس للإخصاب – جدة" منذ افتتاحه عام 2019)، ويواصل المركز تقديم خدمات رعاية خصوبة متقدمة، مع الحفاظ على السمعة الطبية المرموقة والثقة التي بناها في المجتمع.
               </p>
@@ -84,6 +98,7 @@ const OurLocations = () => {
               <p>
                 ويعتمد المركز على تقنيات حديثة تشمل أنظمة مراقبة الأجنّة بتقنية التايم لابس، تخطيط علاجي مدعوم بالذكاء الاصطناعي، ومنصات رقمية لمتابعة المريض، مما يوفّر تجربة علاجية شخصية ترتكز على الأدلة العلمية وتُعزّز من راحة المرضى بمعدلات نجاح تتماشى مع النسب العالمية.
               </p>
+           
               <div className="d-flex align-items-center mt-3 gap-4 flex-wrap">
                 <div className="d-flex align-items-center">
                   <img src="/images/icons/location.svg" alt="location" width={24} height={24} className="me-2" />
@@ -99,14 +114,19 @@ const OurLocations = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* King Salman Section */}
-        <div className="row justify-content-center align-items-center g-4 mt-5">
-          <div className="col-xl-6 col-md-12">
+        <motion.div
+          className="row justify-content-center align-items-center g-4 mt-5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div className="col-xl-6 col-md-12" variants={variantsRight}>
             <div className="service-overview-content">
-              <h2>
+             <h2>
                 بنون – طريق الملك سلمان، الرياض{" "}<br/>
                 <span style={{ fontSize: "18px" }}>(الافتتاح: ديسمبر 2025)</span>
               </h2>
@@ -122,7 +142,6 @@ const OurLocations = () => {
               <p>
                 "بنون – طريق الملك سلمان" لا يهدف فقط إلى تقديم خدمة طبية، بل يسعى ليكون مرجعاً إقليمياً في طب الإخصاب، ومنصة تواكب تطلعات رؤية السعودية 2030 في الريادة الصحية والابتكار الطبي.
               </p>
-
               <div className="d-flex align-items-center mt-3 gap-4 flex-wrap">
                 <div className="d-flex align-items-center">
                   <img src="/images/icons/location.svg" alt="location" width={24} height={24} className="me-2" />
@@ -138,21 +157,18 @@ const OurLocations = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="col-xl-6 col-md-12">
+          <motion.div className="col-xl-6 col-md-12" variants={variantsLeft}>
             <div
               className="service-overview-image"
-              style={{
-                boxShadow: "-50px 50px 0px #d7f2fb",
-                overflow: "hidden",
-                display: "inline-block",
-              }}
+              style={{ boxShadow: "-50px 50px 0px #d7f2fb", overflow: "hidden", display: "inline-block" }}
             >
               <img src={imageKingSalman} alt="بنون طريق الملك سلمان" width={580} height={450} />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
+
       </div>
     </div>
   );
