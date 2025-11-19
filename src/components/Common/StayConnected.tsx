@@ -57,7 +57,7 @@ const HowItWorks = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="btn btn-primary px-5 py-2 rounded-lg submit-btn"
+                    className="btn btn-primary px-5 py-2 rounded-lg submit-btn mail-btn"
                   >
                     Submit
                   </button>
