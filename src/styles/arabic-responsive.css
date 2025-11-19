@@ -18,7 +18,9 @@
     font-size: 12px !important;
     font-style: italic;
 }
-    
+    .service-overview-content h2 {
+    font-size: 20px;
+  }
 .btn-banner {
     background-color: #39bced !important;
     border: none !important;
@@ -848,9 +850,7 @@
   .service-overview-content {
     padding-left: 0;
   }
-  .service-overview-content h2 {
-    font-size: 20px;
-  }
+  
   .service-covers-content h2 {
     font-size: 20px;
   }
