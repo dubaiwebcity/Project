@@ -42,14 +42,15 @@ function OurServices() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = refs.current.indexOf(entry.target);
-            if (index !== -1) {
-              setVisible((prev) => ({ ...prev, [index]: true }));
-            }
-          }
-        });
+       entries.forEach((entry) => {
+  if (entry.isIntersecting) {
+    const index = refs.current.indexOf(entry.target as HTMLDivElement);
+    if (index !== -1) {
+      setVisible((prev) => ({ ...prev, [index]: true }));
+    }
+  }
+});
+
       },
       { threshold: 0.2 }
     );
