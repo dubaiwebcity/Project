@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, easeOut, Variants } from "framer-motion";
 
 const FrequentlyAskedQuestions = () => {
   const [openIndex, setOpenIndex] = useState<number>(0);
@@ -32,9 +33,18 @@ const FrequentlyAskedQuestions = () => {
         "Yes. Infertility affects: <ul><li><strong>10%–15% of couples</strong> of reproductive age globally </li><li><strong>11% of women and 9% of men</strong> have experienced fertility issues In about<strong> 5–10%</strong> of cases, the cause remains unexplained — often linked to subtle issues in sperm, egg, or overall health. [Source: WHO, CDC]</li></ul>",
     },
   ];
-
-  const toggleAccordion = (index: number) => {
+const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? -1 : index);
+  };
+
+  // ⭐ Animation for image
+  const fadeInLeft: Variants = {
+    hidden: { opacity: 0, x: -80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: easeOut },
+    },
   };
 
   return (
@@ -51,11 +61,23 @@ const FrequentlyAskedQuestions = () => {
         </div>
 
         <div className="row justify-content-center g-4">
+
+          {/* ⭐ IMAGE WITH MOTION */}
           <div className="col-lg-6 col-md-12">
-            <div
+            <motion.div
               className="faq-image"
-              style={{ backgroundImage: "url(/images/faqs.jpg)" }}
-            ></div>
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              style={{
+                backgroundImage: "url(/images/faqs.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                minHeight: "450px",
+                borderRadius: "12px",
+              }}
+            ></motion.div>
           </div>
 
           <div className="col-lg-6 col-md-12">
