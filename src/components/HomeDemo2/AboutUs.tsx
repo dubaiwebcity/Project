@@ -77,20 +77,27 @@ function AboutUs() {
           </div>
 
           <div className="col-xl-12 col-md-12">
-            <div className="second-about-items d-flex flex-nowrap justify-content-center overflow-auto">
+            <div className="second-about-items d-flex flex-nowrap justify-content-center overflow-hidden">
+
+
               {aboutData.items.map((item) => {
                 // 👇 item id ke hisaab se width set
-                let boxWidth = "220px";
+                let boxWidth = "250px";
                 if (item.id === 2 || item.id === 3) boxWidth = "150px";
-                if (item.id === 4) boxWidth = "300px";
-                if (item.id === 5) boxWidth = "220px";
+                if (item.id === 4) boxWidth = "290px";
+                if (item.id === 5) boxWidth = "280px";
 
                 return (
-                  <div
-                    key={item.id}
-                    className="item-box text-center mx-3 mt-3"
-                    style={{ minWidth: boxWidth }}
-                  >
+                 <div
+  key={item.id}
+  className="item-box text-center mx-3 mt-3"
+  style={{
+    minWidth: boxWidth,
+    maxWidth: boxWidth,
+    flex: "0 0 auto"
+  }}
+>
+
                     <div className="item">
                       <div className="icon mb-3">
                         <img
