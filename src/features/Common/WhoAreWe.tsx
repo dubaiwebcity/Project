@@ -1,8 +1,16 @@
 import React from "react";
-
+import { motion, Easing, easeOut } from "framer-motion";
 const WhoAreWe = () => {
   const staticImage = "/images/about/who-we-are.avif";
-
+// ⭐ Animation variant
+  const slideInRight = {
+    hidden: { opacity: 0, x: -80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.3, ease: easeOut },
+    },
+  };
   return (
     <div className="service-overview-area mb-5">
       <div className="container">
@@ -44,7 +52,11 @@ const WhoAreWe = () => {
           </div>
 
           <div className="col-xl-6 col-md-12">
-            <div
+              <motion.div
+              initial="hidden"
+                                  whileInView="visible"
+                                  viewport={{ once: true, amount: 0.3 }}
+                                  variants={slideInRight}
               className="service-overview-image"
               style={{
                 boxShadow: "-50px 50px 0px #d7f2fb",
@@ -58,7 +70,7 @@ const WhoAreWe = () => {
                 width={580}
                 height={450}
               />
-            </div>
+             </motion.div>
           </div>
         </div>
       </div>
