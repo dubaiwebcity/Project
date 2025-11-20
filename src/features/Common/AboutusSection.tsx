@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion"; // ✅ Add framer-motion
+import { motion, Easing, easeOut } from "framer-motion";
 
 const AboutusSection = () => {
   const values = [
@@ -18,7 +18,7 @@ const AboutusSection = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.3, ease: easeOut },
     },
   };
 
