@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { easeOut } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 const FrequentlyAskedQuestions = () => {
   const [openIndex, setOpenIndex] = useState<number>(0);
