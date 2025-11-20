@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 
+import { motion } from "framer-motion"; // ⭐ Add this import
+
 const FrequentlyAskedQuestions = () => {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
@@ -36,7 +38,15 @@ const FrequentlyAskedQuestions = () => {
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
-
+// ⭐ Animation Variants — ADD THIS
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -80 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  },
+};
   return (
     <div className="faq-area" dir="rtl" style={{ textAlign: "right" }}>
       <div className="container">
@@ -98,9 +108,14 @@ const FrequentlyAskedQuestions = () => {
             </div>
           </div>
 
+          {/* ⭐ IMAGE WITH LEFT-SIDE ANIMATION */}
           <div className="col-lg-6 col-md-12">
-            <div
+            <motion.div
               className="faq-image"
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
               style={{
                 backgroundImage: "url(/images/faqs.jpg)",
                 backgroundSize: "cover",
@@ -108,7 +123,7 @@ const FrequentlyAskedQuestions = () => {
                 minHeight: "450px",
                 borderRadius: "12px",
               }}
-            ></div>
+            ></motion.div>
           </div>
         </div>
       </div>
