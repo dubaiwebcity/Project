@@ -194,7 +194,7 @@
 
 body {
   margin: 0;
- font-family: "Helvetica Neue", Helvetica !important;
+ font-family: Helvetica !important;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -792,7 +792,7 @@ progress {
   --bs-font-sans-serif: Roboto, "Helvetica Neue",;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Helvetica Neue;
+  --bs-body-font-family: Helvetica;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -3666,7 +3666,7 @@ textarea.form-control-lg {
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
-  --bs-btn-font-family: Helvetica Neue;
+  --bs-btn-font-family: Helvetica;
   --bs-btn-font-size: 1rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
@@ -13699,7 +13699,7 @@ Responsive Sidebar Menu Area CSS
   content: "\ea4e";
   right: 0;
   top: 2.5px;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica";
   font-size: 20px;
   transition: 0.7s;
   color: #5A6A85;
@@ -15291,7 +15291,7 @@ FAQ Area CSS
   top: 50%;
   transform: translateY(-50%);
   right: 20px;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica";
   font-size: 20px;
   color: #2A3547;
   font-weight: 400;
@@ -16380,7 +16380,7 @@ Page Banner Area CSS
 .page-banner-content .meta li::before {
   position: absolute;
   content: "\ea6e";
-  font-family: "Helvetica Neue" !important;
+  font-family: "Helvetica" !important;
   right: -32px;
   top: 50%;
   transform: translateY(-50%);
@@ -18311,7 +18311,7 @@ Filter Wrapper CSS
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-family: "Helvetica Neue" !important;
+  font-family: "Helvetica" !important;
   font-size: 20px;
 }
 .filter-wrapper .accordion .accordion-item.active .accordion-content {
