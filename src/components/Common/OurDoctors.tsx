@@ -121,7 +121,7 @@ const OurDoctors = () => {
 
 
   return (
-      <div className="container">
+      <div className="container mt-5">
         <div className="section-title">
           <div className="row justify-content-center align-items-center g-4">
             <div className="col-lg-10 col-md-12">
