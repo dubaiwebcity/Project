@@ -34,9 +34,9 @@ export default function ClientHomePage() {
 
       <HowItWorksStyle2 />
 
-      <FertilityTeam />
-
       <OurDoctors />
+
+      <FertilityTeam />
 
       <AboutUs />
 
